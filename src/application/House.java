@@ -1,4 +1,4 @@
-package Houses;
+package application;
 
 public class House {
     
