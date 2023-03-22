@@ -13,5 +13,48 @@ public class House {
         color = "";
         population = 0;
     }
+    
+    // Non-Default constructor
+    public House(String theName, String theColor, String descrip, int pop) {
+        name = theName;
+        description = descrip;
+        color = theColor;
+        population = pop;      
+    }
+    
+    //Setters
+    public void setName(String theName) {
+        this.name = theName;
+    }
+    
+    public void setDescription(String descrip) {
+       this.description = descrip;
+    }
+    
+    public void setColor(String theColor) {
+        this.color = theColor;
+    }
+    
+    public void setPopulation(int pop) {
+        this.population = pop;
+    }
+    
+    //Getters
+    public String getName() {
+        return this.name;
+    }
+    
+    public String getDescription() {
+        return this.description;
+    }
+    
+    public String getColor() {
+        return this.color;
+    }
+    
+    public int getPopulation() {
+        return this.population;
+    }
+    
 
 }
