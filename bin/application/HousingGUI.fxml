@@ -4,12 +4,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="927.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="927.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.QuizController">
    <children>
       <Pane prefHeight="633.0" prefWidth="925.0">
          <children>
-            <Button layoutX="398.0" layoutY="282.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="131.0" text="Start Quiz" />
+            <Button fx:id="startQuizButton" layoutX="428.0" layoutY="281.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="131.0" text="Start Quiz" />
+            <Button fx:id="userInfoButton" layoutX="278.0" layoutY="286.0" mnemonicParsing="false" onAction="#handleInfoButtonAction" prefHeight="47.0" prefWidth="144.0" text="User Information" />
          </children>
       </Pane>
    </children>
