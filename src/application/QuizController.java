@@ -15,7 +15,7 @@ import javafx.event.ActionEvent;
 public class QuizController implements Initializable{
     
     @FXML
-    private Button userInfoButton;
+    private Button houseInfoButton;
     
     @FXML
     void handleInfoButtonAction(ActionEvent event) {

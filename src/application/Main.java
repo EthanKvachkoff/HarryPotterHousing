@@ -12,7 +12,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 		    VBox root = (VBox)FXMLLoader.load(getClass().getResource("HousingGUI.fxml"));
-			Scene scene = new Scene(root, 1200, 750);
+			Scene scene = new Scene(root, 750, 500);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("Harry Potter Housing Quiz");
 			primaryStage.setScene(scene);
