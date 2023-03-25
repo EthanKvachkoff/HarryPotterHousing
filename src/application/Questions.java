@@ -1,18 +1,22 @@
+// Class Questions, C211 Group Project, Spring 2023
+// Author: Catlin Kramka
 package application;
 
-public class Questions extends House{
+public class Questions {
     //Instance variables
     int points;
    
-    String prompts;
+    String prompt;
     
-    String answers;
+    String answer;
+   
+    House house;
 
     //Non-default constructor
-    public Questions (String prompts, String answers, House house, int points) {
+    public Questions (String prompt, String answer, House house, int points) {
         super();
-        this.prompts = prompts;
-        this.answers = answers;
+        this.prompt = prompt;
+        this.answer = answer;
         this.house = house;
         this.points = points;
         
@@ -35,31 +39,32 @@ public class Questions extends House{
     /**
      * @return the prompts
      */
-    public String getPrompts() {
-        return prompts;
+    public String getPrompt() {
+        return prompt;
     }
 
     /**
      * @param prompts the prompts to set
      */
-    public void setPrompts(String prompts) {
-        this.prompts = prompts;
+    public void setPrompt(String prompt) {
+        this.prompt = prompt;
     }
 
     /**
      * @return the answers
      */
-    public String getAnswers() {
-        return answers;
+    public String getAnswer() {
+        return answer;
     }
 
     /**
      * @param answers the answers to set
      */
     public void setAnswers(String answers) {
-        this.answers = answers;
+        this.answer = answers;
     }
-    public double calulateHouse () {
-        
+    
+    public House calulateHouse () {
+        return house;       
     }
 }

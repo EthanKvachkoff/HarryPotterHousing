@@ -1,3 +1,5 @@
+// Class House, C211 Group Project, Spring 2023
+// Author: Ethan Kvachkoff
 package application;
 
 public class House {

@@ -1,3 +1,5 @@
+// Class User, C211 Group Project, Spring 2023
+// Author: Zach Butler
 package application;
 
 public class User {

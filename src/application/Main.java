@@ -1,3 +1,5 @@
+// Class Main, C211 Group Project, Spring 2023
+// Authors: Catlin Kramka/Zach Butler/Ethan Kvachkoff
 package application;
 	
 import javafx.application.Application;
