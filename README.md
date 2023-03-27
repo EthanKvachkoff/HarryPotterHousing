@@ -10,6 +10,7 @@ __Users class__ - Zach Butler
 __Question class__ - Catlin Kramka  
 __House class__ - Ethan Kvachkoff  
 __InfoController class__ - Catlin Kramka, Zach Butler, Ethan Kvachkoff  
+__MainController class__ - Catlin Kramka, Zach Butler, Ethan Kvachkoff  
 __QuizController class__ - Catlin Kramka, Zach Butler, Ethan Kvachkoff  
 
 #### Contibutors
