@@ -9,7 +9,7 @@ Sorts the users into a house at Hogwarts after answering some questions regardin
 __Users class__ - Zach Butler  
 __Question class__ - Catlin Kramka  
 __House class__ - Ethan Kvachkoff  
-__InfoController class__ - Catlin Kramka,Ethan Kvachkoff, Zach Butler
+__InfoController class__ - Catlin Kramka,Ethan Kvachkoff, Zach Butler  
 __MainController class__ - Catlin Kramka,Ethan Kvachkoff, Zach Butler  
 __QuizController class__ - Catlin Kramka,Ethan Kvachkoff, Zach Butler  
 
