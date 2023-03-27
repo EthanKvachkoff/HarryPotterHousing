@@ -13,7 +13,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-		    VBox root = (VBox)FXMLLoader.load(getClass().getResource("HousingGUI.fxml"));
+		    VBox root = (VBox)FXMLLoader.load(getClass().getResource("MainGUI.fxml"));
 			Scene scene = new Scene(root, 750, 500);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("Harry Potter Housing Quiz");
