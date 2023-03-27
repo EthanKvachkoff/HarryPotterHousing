@@ -6,7 +6,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.QuizController">
    <children>
-      <Pane prefHeight="900.0" prefWidth="750.0">
+      <Pane prefHeight="900.0" prefWidth="750.0" style="-fx-background-color: #1A472A;">
          <children>
             <Button fx:id="submitQuizButton" layoutX="307.0" layoutY="793.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="53.0" prefWidth="136.0" text="Submit" />
          </children></Pane>
