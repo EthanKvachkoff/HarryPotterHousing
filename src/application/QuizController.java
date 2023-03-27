@@ -17,28 +17,19 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
-public class QuizController implements Initializable{
+public class QuizController {
     
     @FXML
-    private Button houseInfoButton;
+    private Button submitQuizButton;
     
     @FXML
-    void handleInfoButtonAction(ActionEvent event) {
+    void handleSubmitButtonAction(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("InfoBox.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("House Information");
-            stage.setScene(new Scene(root1));
-            stage.show();
+            Stage stage = (Stage) submitQuizButton.getScene().getWindow();
+            stage.close();
         } catch(Exception e) {
             e.printStackTrace();
         }
-    }  
-    
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-    
-    }
+    } 
 
 }
