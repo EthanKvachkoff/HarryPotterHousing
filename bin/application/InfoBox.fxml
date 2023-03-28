@@ -10,8 +10,8 @@
    <children>
       <Pane prefHeight="403.0" prefWidth="600.0" style="-fx-background-color: #740001;">
          <children>
-            <TextArea fx:id="infoText" editable="false" layoutX="180.0" layoutY="57.0" prefHeight="309.0" prefWidth="227.0" />
-            <Label layoutX="180.0" layoutY="22.0" prefHeight="35.0" prefWidth="151.0" text="Information:" textFill="SILVER">
+            <TextArea fx:id="infoText" editable="false" layoutX="180.0" layoutY="57.0" prefHeight="309.0" prefWidth="227.0" style="-fx-border-color: #D3A625;" />
+            <Label layoutX="180.0" layoutY="22.0" prefHeight="35.0" prefWidth="151.0" text="Information:" textFill="#d3a625">
                <font>
                   <Font size="24.0" />
                </font>

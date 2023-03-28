@@ -3,23 +3,30 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="927.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
       <Pane prefHeight="633.0" prefWidth="925.0" style="-fx-background-color: #0E1A40;">
          <children>
-            <Button fx:id="startQuizButton" layoutX="464.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleQuizButtonAction" prefHeight="53.0" prefWidth="132.0" text="Start Quiz" />
-            <Button fx:id="houseInfoButton" layoutX="297.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleInfoButtonAction" prefHeight="53.0" prefWidth="144.0" text="House Information" />
+            <Button fx:id="startQuizButton" layoutX="464.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleQuizButtonAction" prefHeight="53.0" prefWidth="132.0" style="-fx-border-color: #946B2D;" text="Start Quiz" />
+            <Button fx:id="houseInfoButton" layoutX="297.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleInfoButtonAction" prefHeight="53.0" prefWidth="144.0" style="-fx-border-color: #946B2D;" text="House Information" />
             <Label layoutX="25.0" layoutY="14.0" prefHeight="81.0" prefWidth="710.0" text="Welcome to the Harry Potter Housing Quiz" textFill="#946b2d">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <ListView layoutX="25.0" layoutY="149.0" prefHeight="201.0" prefWidth="144.0" />
+            <ListView layoutX="25.0" layoutY="149.0" prefHeight="201.0" prefWidth="144.0" style="-fx-background-color: #222F5B; -fx-border-color: #946B2D;" />
             <Label layoutX="25.0" layoutY="104.0" prefHeight="36.0" prefWidth="69.0" text="Houses:" textFill="#946b2d">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="aboutTextArea" editable="false" layoutX="244.0" layoutY="149.0" prefHeight="125.0" prefWidth="477.0" style="-fx-border-color: #946B2D;" />
+            <Label layoutX="247.0" layoutY="104.0" prefHeight="36.0" prefWidth="87.0" text="About:" textFill="#946b2d">
                <font>
                   <Font size="18.0" />
                </font>

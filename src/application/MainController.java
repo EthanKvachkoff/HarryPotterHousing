@@ -26,6 +26,9 @@ public class MainController implements Initializable{
     private Button startQuizButton;
     
     @FXML
+    private TextArea aboutTextArea;
+    
+    @FXML
     void handleInfoButtonAction(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("InfoBox.fxml"));
@@ -55,7 +58,10 @@ public class MainController implements Initializable{
     
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-    
+        aboutTextArea.appendText("Welcome to the Harry Potter House Quiz! \n\n");
+        aboutTextArea.appendText("After taking the quiz, based on your answers you will be sorted into a Hogwarts house.\n");
+        aboutTextArea.appendText("To begin click the 'Start Quiz' button.\n");
+        aboutTextArea.appendText("To access house information click the 'House Information' button.\n");
     }
 
 }
