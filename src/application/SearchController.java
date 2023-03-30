@@ -1,4 +1,4 @@
-// Class QuizController, C211 Group Project, Spring 2023
+// Class SearchController, C211 Group Project, Spring 2023
 // Authors: Catlin Kramka/Zach Butler/Ethan Kvachkoff
 package application;
 
@@ -18,18 +18,16 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
-public class QuizController implements Initializable{
+
+public class SearchController implements Initializable{
     
     @FXML
-    private Button submitQuizButton;
+    private Button closeSearchButton;
     
     @FXML
-    private TextField nameTextField;
-    
-    @FXML
-    void handleSubmitButtonAction(ActionEvent event) {
+    void handleCloseButtonAction(ActionEvent event) {
         try {
-            Stage stage = (Stage) submitQuizButton.getScene().getWindow();
+            Stage stage = (Stage) closeSearchButton.getScene().getWindow();
             stage.close();
         } catch(Exception e) {
             e.printStackTrace();
@@ -40,6 +38,6 @@ public class QuizController implements Initializable{
     public void initialize(URL arg0, ResourceBundle arg1) {
         // TODO Auto-generated method stub
         
-    } 
+    }
 
 }
