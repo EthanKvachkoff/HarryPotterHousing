@@ -24,6 +24,7 @@ public class InfoController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        infoText.appendText("Id: " + "\n");
         infoText.appendText("Name: " + "\n");
         infoText.appendText("House: " + "\n");
         infoText.appendText("Population: " + "\n");

@@ -8,18 +8,17 @@ public class Questions {
    
     String prompt;
     
-    String answer;
+    String answers[];
    
     House house;
 
     //Non-default constructor
-    public Questions (String prompt, String answer, House house, int points) {
+    public Questions (String prompt, String answer[], House house, int points) {
         super();
         this.prompt = prompt;
-        this.answer = answer;
+        this.answers = null;
         this.house = house;
-        this.points = points;
-        
+        this.points = points;     
     }
 
     /**
@@ -53,15 +52,15 @@ public class Questions {
     /**
      * @return the answers
      */
-    public String getAnswer() {
-        return answer;
+    public String[] getAnswers() {
+        return answers;
     }
 
     /**
      * @param answers the answers to set
      */
-    public void setAnswers(String answers) {
-        this.answer = answers;
+    public void setAnswers(String answerss[]) {
+        this.answers = answerss;
     }
     
     public House calulateHouse () {
