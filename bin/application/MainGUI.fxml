@@ -5,6 +5,8 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -34,6 +36,11 @@
             </Label>
             <TextField layoutX="242.0" layoutY="303.0" prefHeight="25.0" prefWidth="56.0" promptText="ID" />
             <Button layoutX="316.0" layoutY="303.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Find" />
+            <ImageView fitHeight="125.0" fitWidth="191.0" layoutX="31.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Hogwarts%20Crest.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>
