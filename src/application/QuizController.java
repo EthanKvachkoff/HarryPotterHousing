@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -27,6 +28,38 @@ public class QuizController implements Initializable{
     private TextField nameTextField;
     
     @FXML
+    private TextField questionText1;
+    
+    @FXML
+    private TextField questionText2;
+    
+    @FXML
+    private TextField questionText3;
+    
+    @FXML
+    private TextField questionText4;
+    
+    @FXML
+    private TextField questionText5;
+    
+    @FXML
+    private ChoiceBox<String> answerSelect1;
+    
+    @FXML
+    private ChoiceBox<String> answerSelect2;
+    
+    @FXML
+    private ChoiceBox<String> answerSelect3;
+    
+    @FXML
+    private ChoiceBox<String> answerSelect4;
+    
+    @FXML
+    private ChoiceBox<String> answerSelect5;
+    
+    
+    
+    @FXML
     void handleSubmitButtonAction(ActionEvent event) {
         try {
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
@@ -38,8 +71,11 @@ public class QuizController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        // TODO Auto-generated method stub
-        
+        answerSelect1.setValue("*Select an Answer*");
+        answerSelect2.setValue("*Select an Answer*");
+        answerSelect3.setValue("*Select an Answer*");
+        answerSelect4.setValue("*Select an Answer*");
+        answerSelect5.setValue("*Select an Answer*");    
     } 
 
 }
