@@ -29,7 +29,7 @@
             </Label>
             <ScrollPane layoutX="21.0" layoutY="126.0" prefHeight="648.0" prefWidth="709.0">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="646.0" prefWidth="707.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="651.0" prefWidth="710.0">
                      <children>
                         <TextField fx:id="questionText1" editable="false" layoutX="22.0" layoutY="31.0" prefHeight="25.0" prefWidth="650.0" />
                         <Label layoutX="25.0" layoutY="12.0" prefHeight="17.0" prefWidth="91.0" text="Question #1:" />
