@@ -75,7 +75,7 @@ public class QuizController implements Initializable{
         answerSelect2.setValue("*Select an Answer*");
         answerSelect3.setValue("*Select an Answer*");
         answerSelect4.setValue("*Select an Answer*");
-        answerSelect5.setValue("*Select an Answer*");    
+        answerSelect5.setValue("*Select an Answer*");  
     } 
 
 }

@@ -13,7 +13,7 @@ public class Questions {
     House house;
 
     //Non-default constructor
-    public Questions (String prompt, String answer[], House house, int points) {
+    public Questions(String prompt, String answer[], House house, int points) {
         super();
         this.prompt = prompt;
         this.answers = null;
