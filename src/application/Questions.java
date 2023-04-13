@@ -4,36 +4,19 @@ package application;
 
 public class Questions {
     //Instance variables
-    int points;
    
     String prompt;
     
     String answers[];
    
-    House house;
 
     //Non-default constructor
-    public Questions(String prompt, String answer[], House house, int points) {
+    public Questions (String prompt, String answers[]) {
         super();
         this.prompt = prompt;
-        this.answers = null;
-        this.house = house;
-        this.points = points;     
+        this.answers = null;  
     }
 
-    /**
-     * @return the points
-     */
-    public int getPoints() {
-        return points;
-    }
-
-    /**
-     * @param points the points to set
-     */
-    public void setPoints(int points) {
-        this.points = points;
-    }
 
     /**
      * @return the prompts
@@ -63,7 +46,4 @@ public class Questions {
         this.answers = answerss;
     }
     
-    public House calulateHouse () {
-        return house;       
-    }
 }
