@@ -59,6 +59,20 @@ public class User {
         this.house = house;
     }
     
+    public void assignPet(House house) { 
+        if (house.getName() == "Slytherin") {
+            setPet("Snake");
+        }else if (house.getName() == "Hufflepuff") {
+            setPet("Cat");     
+        }else if (house.getName() == "Gryfindor") {
+            setPet("Owl");     
+        }else if (house.getName() == "Ravenclaw"){
+            setPet("Toad");       
+        } else {
+           System.out.println("No suitable house found. Cant assign a pet."); 
+        }
+    }
+    
  // Reads user's id, name, pet, and house from given file
     public void read(String filename) {
         File f = new File(filename);
