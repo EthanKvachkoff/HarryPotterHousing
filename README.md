@@ -13,6 +13,26 @@ __InfoController class__ - Catlin Kramka, Ethan Kvachkoff, Zach Butler
 __MainController class__ - Catlin Kramka, Ethan Kvachkoff, Zach Butler  
 __QuizController class__ - Catlin Kramka, Ethan Kvachkoff, Zach Butler  
 
+### CLASSES:
+
+## Users
+Author - Zach Butler
+
+## Question
+Author - Catlin Kramka
+
+## House
+Author - Ethan Kvachkoff
+
+## InfoController
+Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler 
+
+## MainController
+Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler
+
+## QuizController
+Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler
+
 #### Contibutors
 - Ethan Kvachkoff
 - Zach Butler
