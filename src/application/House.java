@@ -57,6 +57,4 @@ public class House {
     public int getPopulation() {
         return this.population;
     }
-    
-
 }

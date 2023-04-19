@@ -8,74 +8,113 @@ import java.util.Scanner;
 
 public class User {
 
-	// Instance variables
+    // Instance variables
 	int id;
-	String name, pet;
+    String name, pet;
+    
+    
+    //Aggregation relationship
+    private House house;
+    
+    //Non-default constructor
+    public User(int id, String name, String pet, House house) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.pet = pet;
+        this.house = house;
+    }
+    
+    // Get methods
+    public int getId() {
+    	return id;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public String getPet() {
+        return pet;
+    }
+    
+    public House getHouse() {
+        return house;
+    }
+    
+    // Set methods
+    public void setId(int id) {
+    	this.id = id;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setPet(String pet) {
+        this.pet = pet;
+    }
+    
+    public void setHouse(House house) {
+        this.house = house;
+    }
+    
+    public void assignPet(House house) { 
+        if (house.getName() == "Slytherin") {
+            setPet("Snake");
+        }else if (house.getName() == "Hufflepuff") {
+            setPet("Cat");     
+        }else if (house.getName() == "Gryfindor") {
+            setPet("Owl");     
+        }else if (house.getName() == "Ravenclaw"){
+            setPet("Toad");       
+        } else {
+           System.out.println("No suitable house found. Can't assign a pet."); 
+        }
+    }
+    
+ // Reads user's id, name, pet, and house from given file
+    public void read(String filename) {
+        File f = new File(filename);
+        try (Scanner scan = new Scanner(f)) {
+        	id = scan.nextInt();
+            name = scan.nextLine();
+            pet = scan.nextLine();
+            house.name = scan.nextLine();
 
-	// Aggregation relationship
-	private House house;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	// Non-default constructor
-	public User(int id, String name, String pet, House house) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.pet = pet;
-		this.house = house;
-	}
+    // Reads multiple objects from the same file
+    public void read(Scanner scan) {
+        if (scan.hasNext()) {
+        	id = scan.nextInt();
+            name = scan.nextLine();
+            pet = scan.nextLine();
+            house.name = scan.nextLine();
+        }
+    }
 
-	// Get methods
-	public int getId() {
-		return id;
-	}
+    // Write user's id, name, pet, and house to file
+    public void write(String filename) {
 
-	public String getName() {
-		return name;
-	}
+        try (FileWriter f = new FileWriter(filename)) {
+            f.write(id + "\n" + name + "\n" + pet + "\n" + house.name + "\n");
 
-	public String getPet() {
-		return pet;
-	}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	public House getHouse() {
-		return house;
-	}
-
-	// Set methods
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setPet(String pet) {
-		this.pet = pet;
-	}
-
-	public void setHouse(House house) {
-		this.house = house;
-	}
-
-	// Reads multiple objects from the same file
-	public void read(Scanner scan) {
-		if (scan.hasNext()) {
-			id = scan.nextInt();
-			name = scan.nextLine();
-			pet = scan.nextLine();
-			house.name = scan.nextLine();
-		}
-	}
-
-
-	// Write to file with FileWriter object
-	public void write(FileWriter f) {
-		try {
-			f.write(id + "\n" + name + "\n" + pet + "\n" + house.name + "\n");
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    // Write to file with FileWriter object
+    public void write(FileWriter f) {
+        try {
+            f.write(id + "\n" + name + "\n" + pet + "\n" + house.name + "\n");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
+
