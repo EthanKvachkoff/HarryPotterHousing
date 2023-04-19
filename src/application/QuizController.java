@@ -90,6 +90,82 @@ public class QuizController implements Initializable{
         }
     }
     
+    private House calculateHouse() {
+        int[] housePoints = new int[4];
+        House house;
+        
+        if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 0)) {
+            housePoints[0] += 1;
+        } else if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 1)) {
+            housePoints[1] += 1;
+        } else if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 2)) {
+            housePoints[2] += 1;
+        } else if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 3)) {
+            housePoints[3] += 1;
+        }
+        
+        if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 0)) {
+            housePoints[0] += 1;
+        } else if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 1)) {
+            housePoints[1] += 1;
+        } else if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 2)) {
+            housePoints[2] += 1;
+        } else if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 3)) {
+            housePoints[3] += 1;
+        }
+        
+        if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 0)) {
+            housePoints[0] += 1;
+        } else if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 1)) {
+            housePoints[1] += 1;
+        } else if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 2)) {
+            housePoints[2] += 1;
+        } else if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 3)) {
+            housePoints[3] += 1;
+        }
+        
+        if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 0)) {
+            housePoints[0] += 1;
+        } else if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 1)) {
+            housePoints[1] += 1;
+        } else if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 2)) {
+            housePoints[2] += 1;
+        } else if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 3)) {
+            housePoints[3] += 1;
+        }
+        
+        if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 0)) {
+            housePoints[0] += 1;
+        } else if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 1)) {
+            housePoints[1] += 1;
+        } else if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 2)) {
+            housePoints[2] += 1;
+        } else if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 3)) {
+            housePoints[3] += 1;
+        }
+        
+       if (housePoints[0] == Questions.getLargestNumber(housePoints)) {
+           House hufflepuff = new House("Hufflepuff", "Yellow & Black", "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.", 12); // FIX POPULATIOn
+           return hufflepuff; 
+       } else if (housePoints[1] == Questions.getLargestNumber(housePoints)) {
+           House slytherin = new House("Slytherin", "Green & Silver", "Slytherins tend to be ambitious, shrewd, cunning, strong leaders, and achievement-oriented.", 12);
+           return slytherin; 
+       } else if (housePoints[2] == Questions.getLargestNumber(housePoints)) {
+           House gryffindor = new House("Gryffindor", "Red & Gold", "Gryffindor is know to have te traits of courage as well as daring, nerve, and chivarly. Very Brave.", 12);
+           return gryffindor; 
+       } else if (housePoints[3] == Questions.getLargestNumber(housePoints)) {
+           House ravenclaw = new House("Ravenclaw", "Blue & Bronze", "Ravenclaws possess the traits of cleverness, wisdom, wit, intellectual ability and creativity.", 12);
+           return ravenclaw; 
+       } else {
+           System.out.println("Error: Can't create a house.");
+       }
+       return null;
+    }
+    
+    public String getSpecificAnswer(String[] allAnswers, int answerNum) {
+        return allAnswers[answerNum];
+    }
+    
     void initQuestions() {
         questionText1.setText(questionsArray[0].getPrompt());
         questionText2.setText(questionsArray[1].getPrompt());
