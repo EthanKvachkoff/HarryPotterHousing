@@ -45,7 +45,6 @@ public class Questions {
     public void setAnswers(String answerss[]) {
         this.answers = answerss;
     }
-    
     // Used to return the largest number of points in an array
     // Used to check for which house the user suits best with
     public static int getLargestNumber(int[] arr) {
@@ -57,5 +56,4 @@ public class Questions {
         }
         return highestNum;
     }
-    
 }

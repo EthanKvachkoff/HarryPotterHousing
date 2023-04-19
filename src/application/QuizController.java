@@ -188,20 +188,20 @@ public class QuizController implements Initializable{
         answerSelect1.setItems(FXCollections.observableArrayList("A) Phoenix Feather", "B) Badger fur","C) Dragons scale","D) Eagles feather"));
         answerSelect2.setValue("*Select an Answer*");
         answerSelect2.setItems(FXCollections.observableArrayList("A) Be up for the challenge, no question.\n"
-        		+ " ", "B) Not sure about breaking the rules, but not willing to let your friends go alone. \n"
-        				+ "","C) See it as an opportunity to report your friends to the head of house to get ahead.\n"
-        						+" ", "D) See this as a great learning opportunity."));
+                + " ", "B) Not sure about breaking the rules, but not willing to let your friends go alone. \n"
+                        + "","C) See it as an opportunity to report your friends to the head of house to get ahead.\n"
+                                +" ", "D) See this as a great learning opportunity."));
         answerSelect3.setValue("*Select an Answer*");
         answerSelect3.setItems(FXCollections.observableArrayList("A) Be very proud of yourself and not mention it to your friend.", "B) Be happy for your marks, keep it to yourself and then help tutor your friend.\n"
-        		+ " ", "B) Be very proud of yourself and let your friend know, as well as anyone else in earshot. \n"
-        				+ " ","D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun. "));
+                + " ", "B) Be very proud of yourself and let your friend know, as well as anyone else in earshot. \n"
+                        + " ","D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun. "));
         answerSelect4.setValue("*Select an Answer*");
         answerSelect4.setItems(FXCollections.observableArrayList("A) You play with integrity and chivalry.\n"
-        		+ " ", "B) You play with integrity and fairness.\n" + " ","C) You play with cunning and always look for an opportunity to have the upper hand.\n"+ " ","D) You play with intelligence and creativity. "));
+                + " ", "B) You play with integrity and fairness.\n" + " ","C) You play with cunning and always look for an opportunity to have the upper hand.\n"+ " ","D) You play with intelligence and creativity. "));
         answerSelect5.setValue("*Select an Answer*");  
         answerSelect5.setItems(FXCollections.observableArrayList("A) You pick up the box and hand it back.\n", "B) You pick up the box, hand it back and apologize for it happening.\n"
-        		+ " ", "C) You pick up the box and slip it into your pocket to keep for yourself.\n"
-        		+ " ", "D) You magically place the box back in the person’s pocket without them noticing. "));
+                + " ", "C) You pick up the box and slip it into your pocket to keep for yourself.\n"
+                + " ", "D) You magically place the box back in the person’s pocket without them noticing. "));
         
         initQuestionArray();
         initQuestions();
