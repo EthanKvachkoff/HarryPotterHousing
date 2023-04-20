@@ -2,6 +2,10 @@
 // Author: Ethan Kvachkoff
 package application;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Scanner;
+
 public class House {
     
     // Instance attributes
@@ -56,5 +60,44 @@ public class House {
     
     public int getPopulation() {
         return this.population;
+    }
+    
+ // Reads house's name and population from given file
+    public void read(String filename) {
+        File f = new File(filename);
+        try (Scanner scan = new Scanner(f)) {
+            name = scan.nextLine();
+            population = scan.nextInt();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Reads multiple objects from the same file
+    public void read(Scanner scan) {
+        if (scan.hasNext()) {
+            name = scan.nextLine();
+            population = scan.nextInt();
+        }
+    }
+
+    // Write house's name and population to file
+    public void write(String filename) {
+
+        try (FileWriter f = new FileWriter(filename)) {
+            f.write(name + "\n" + population + "\n");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Write to file with FileWriter object
+    public void write(FileWriter f) {
+        try {
+            f.write(name + "\n" + population + "\n");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
