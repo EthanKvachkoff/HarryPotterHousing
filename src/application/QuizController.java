@@ -184,6 +184,8 @@ public class QuizController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+    	HouseArray houseArray = new HouseArray(4);
+		houseArray.loadHouse(houseArray);
         answerSelect1.setValue("*Select an Answer*");
         answerSelect1.setItems(FXCollections.observableArrayList("A) Phoenix Feather", "B) Badger fur","C) Dragons scale","D) Eagles feather"));
         answerSelect2.setValue("*Select an Answer*");
@@ -206,5 +208,6 @@ public class QuizController implements Initializable{
         initQuestionArray();
         initQuestions();
     } 
+    
 
 }

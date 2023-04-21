@@ -21,7 +21,7 @@ public class House {
     }
     
     // Non-Default constructor
-    public House(String theName, String theColor, String descrip, int pop) {
+    public House(String theName, String descrip, String theColor, int pop) {
         name = theName;
         description = descrip;
         color = theColor;
@@ -67,6 +67,8 @@ public class House {
         File f = new File(filename);
         try (Scanner scan = new Scanner(f)) {
             name = scan.nextLine();
+            description = scan.nextLine();
+            color = scan.nextLine();
             population = scan.nextInt();
         } catch (Exception e) {
             e.printStackTrace();
@@ -76,7 +78,9 @@ public class House {
     // Reads multiple objects from the same file
     public void read(Scanner scan) {
         if (scan.hasNext()) {
-            name = scan.nextLine();
+        	name = scan.nextLine();
+            description = scan.nextLine();
+            color = scan.nextLine();
             population = scan.nextInt();
         }
     }
@@ -85,7 +89,7 @@ public class House {
     public void write(String filename) {
 
         try (FileWriter f = new FileWriter(filename)) {
-            f.write(name + "\n" + population + "\n");
+            f.write(name + "\n" + description + "\n" + color + "\n" + population + "\n");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,9 +99,10 @@ public class House {
     // Write to file with FileWriter object
     public void write(FileWriter f) {
         try {
-            f.write(name + "\n" + population + "\n");
+            f.write(name + "\n" + description + "\n" + color + "\n" + population + "\n");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+    
 }
