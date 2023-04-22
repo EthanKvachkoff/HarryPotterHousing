@@ -3,6 +3,7 @@
 package application;
 
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -84,7 +85,7 @@ public class QuizController implements Initializable{
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
             House userHouse = calculateHouse();
             User usableUser = createUser(userHouse);
-            System.out.println(usableUser.getName()+ "\n"+ usableUser.getHouse().name);
+            System.out.println(usableUser.getName()+ "\n"+ usableUser.getHouse().name + "\n" + usableUser.id + "\n" + usableUser.pet); // test case
             stage.close();
         } catch(Exception e) {
             e.printStackTrace();
@@ -92,9 +93,11 @@ public class QuizController implements Initializable{
     }
     
     private User createUser(House userHouse) {
+        /*ADD A CHECK TO SEE IF RANDOM NUM IS ALREADY AN ID THEN REGENERATE IF TRUE*/
+        Random rand = new Random();
+        int userId = rand.nextInt(10000) + 1;
         String userName;
-        userName = nameTextField.getText();
-        int userId = 0;
+        userName = nameTextField.getText();      
         User user = new User(userId, userName, User.assignPet(userHouse), userHouse);
         return user;
     }

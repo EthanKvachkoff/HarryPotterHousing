@@ -59,12 +59,12 @@ public class User {
         this.house = house;
     }
     
-    public static String assignPet(House house) { 
+    public static String assignPet(House house) {
         if (house.getName() == "Slytherin") {
            return "Snake";
         }else if (house.getName() == "Hufflepuff") {
             return "Cat";    
-        }else if (house.getName() == "Gryfindor") {
+        }else if (house.getName() == "Gryffindor") {
             return "Owl";    
         }else if (house.getName() == "Ravenclaw"){
             return "Toad";       
@@ -73,7 +73,7 @@ public class User {
             return "No Pet";
         }
     }
-    
+ 
  // Reads user's id, name, pet, and house from given file
     public void read(String filename) {
         File f = new File(filename);
