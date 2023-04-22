@@ -60,23 +60,23 @@ public class QuizController implements Initializable{
     
     Questions[] questionsArray = new Questions[5];
     
-    String[] answers1 = {"Phoenix Feather", "Bagder fur", "Dragons scale", "Eagles feather"};
-    String[] answers2 = {"Be up for the challenge, no question", 
-            "Not sure about breaking the rules, but not willing to let your friends go alone", 
-            "See it as an opportunity to report your friends to the head of house to get ahead",
-            "See this as a great learning opportunity"};
-    String[] answers3 = {"Be very proud of yourself and not mention it to your friend",
-            "Be happy for your marks, keep it to yourself and then help tutor your friend",
-            "Be very proud of yourself and let your friends know, as well as anyone else in earshot",
-            "Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun"};
-    String[] answers4 = {"you play with integrity and chivarly",
-            "You play with integrity and fairness",
-            "You play with cunning and always look for an opportunity to have the upper hand",
-            "You play with intelligence and creativity"};
-    String[] answers5 = {"You pick up the box and hand it back",
-            "You pick up the box, and hand it back and apologize for it happening",
-            "You pick up the box and slip it into your pocket",
-            "You magically place the box back in the person's pocket without them noticing"};
+    String[] answers1 = {"A) Phoenix Feather", "B) Bagder fur", "C) Dragons scale", "D) Eagles feather"};
+    String[] answers2 = {"A) Be up for the challenge, no question", 
+            "B) Not sure about breaking the rules, but not willing to let your friends go alone", 
+            "C) See it as an opportunity to report your friends to the head of house to get ahead",
+            "D) See this as a great learning opportunity"};
+    String[] answers3 = {"A) Be very proud of yourself and not mention it to your friend",
+            "B) Be happy for your marks, keep it to yourself and then help tutor your friend",
+            "C) Be very proud of yourself and let your friends know, as well as anyone else in earshot",
+            "D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun"};
+    String[] answers4 = {"A) you play with integrity and chivarly",
+            "B) You play with integrity and fairness",
+            "C) You play with cunning and always look for an opportunity to have the upper hand",
+            "D) You play with intelligence and creativity"};
+    String[] answers5 = {"A) You pick up the box and hand it back",
+            "B) You pick up the box, and hand it back and apologize for it happening",
+            "C) You pick up the box and slip it into your pocket",
+            "D) You magically place the box back in the person's pocket without them noticing"};
     
     @FXML
     void handleSubmitButtonAction(ActionEvent event) {
@@ -152,7 +152,6 @@ public class QuizController implements Initializable{
         } else if (answerSelect5.getValue() == answers5[3]) {
             housePoints[3] += 1;
         }
-        
        if (housePoints[0] == Questions.getLargestNumber(housePoints)) {
            House hufflepuff = new House("Hufflepuff", "Yellow & Black", "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.", 12); // FIX POPULATIOn
            return hufflepuff; 
@@ -167,8 +166,8 @@ public class QuizController implements Initializable{
            return ravenclaw; 
        } else {
            System.out.println("Error: Can't create a house.");
+           return null;
        }
-       return null;
     }
     
     void initQuestions() {
@@ -200,7 +199,7 @@ public class QuizController implements Initializable{
                                 +" ", "D) See this as a great learning opportunity."));
         answerSelect3.setValue("*Select an Answer*");
         answerSelect3.setItems(FXCollections.observableArrayList("A) Be very proud of yourself and not mention it to your friend.", "B) Be happy for your marks, keep it to yourself and then help tutor your friend.\n"
-                + " ", "B) Be very proud of yourself and let your friend know, as well as anyone else in earshot. \n"
+                + " ", "C) Be very proud of yourself and let your friend know, as well as anyone else in earshot. \n"
                         + " ","D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun. "));
         answerSelect4.setValue("*Select an Answer*");
         answerSelect4.setItems(FXCollections.observableArrayList("A) You play with integrity and chivalry.\n"
