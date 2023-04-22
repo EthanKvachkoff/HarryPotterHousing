@@ -59,17 +59,18 @@ public class User {
         this.house = house;
     }
     
-    public void assignPet(House house) { 
+    public static String assignPet(House house) { 
         if (house.getName() == "Slytherin") {
-            setPet("Snake");
+           return "Snake";
         }else if (house.getName() == "Hufflepuff") {
-            setPet("Cat");     
+            return "Cat";    
         }else if (house.getName() == "Gryfindor") {
-            setPet("Owl");     
+            return "Owl";    
         }else if (house.getName() == "Ravenclaw"){
-            setPet("Toad");       
+            return "Toad";       
         } else {
-           System.out.println("No suitable house found. Can't assign a pet."); 
+            System.out.println("No suitable house found. Can't assign a pet."); 
+            return "No Pet";
         }
     }
     
@@ -81,7 +82,6 @@ public class User {
             name = scan.nextLine();
             pet = scan.nextLine();
             house.name = scan.nextLine();
-
         } catch (Exception e) {
             e.printStackTrace();
         }

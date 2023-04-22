@@ -81,66 +81,75 @@ public class QuizController implements Initializable{
     @FXML
     void handleSubmitButtonAction(ActionEvent event) {
         try {
-            String userName;
-            userName = nameTextField.getText();
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
+            House userHouse = calculateHouse();
+            User usableUser = createUser(userHouse);
+            System.out.println(usableUser.getName()+ "\n"+ usableUser.getHouse().name);
             stage.close();
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
     
+    private User createUser(House userHouse) {
+        String userName;
+        userName = nameTextField.getText();
+        int userId = 0;
+        User user = new User(userId, userName, User.assignPet(userHouse), userHouse);
+        return user;
+    }
+    
     private House calculateHouse() {
         int[] housePoints = new int[4];
         House house;
         
-        if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 0)) {
+        if (answerSelect1.getValue() == answers1[0]) {
             housePoints[0] += 1;
-        } else if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 1)) {
+        } else if (answerSelect1.getValue() == answers1[1]) {
             housePoints[1] += 1;
-        } else if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 2)) {
+        } else if (answerSelect1.getValue() == answers1[2]) {
             housePoints[2] += 1;
-        } else if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 3)) {
+        } else if (answerSelect1.getValue() == answers1[3]) {
             housePoints[3] += 1;
         }
         
-        if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 0)) {
+        if (answerSelect2.getValue() == answers2[0]) {
             housePoints[0] += 1;
-        } else if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 1)) {
+        } else if (answerSelect2.getValue() == answers2[1]) {
             housePoints[1] += 1;
-        } else if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 2)) {
+        } else if (answerSelect2.getValue() == answers2[2]) {
             housePoints[2] += 1;
-        } else if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 3)) {
+        } else if (answerSelect2.getValue() == answers2[3]) {
             housePoints[3] += 1;
         }
         
-        if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 0)) {
+        if (answerSelect3.getValue() == answers3[0]) {
             housePoints[0] += 1;
-        } else if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 1)) {
+        } else if (answerSelect3.getValue() == answers3[1]) {
             housePoints[1] += 1;
-        } else if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 2)) {
+        } else if (answerSelect3.getValue() == answers3[2]) {
             housePoints[2] += 1;
-        } else if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 3)) {
+        } else if (answerSelect3.getValue() == answers3[3]) {
             housePoints[3] += 1;
         }
         
-        if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 0)) {
+        if (answerSelect4.getValue() == answers4[0]) {
             housePoints[0] += 1;
-        } else if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 1)) {
+        } else if (answerSelect4.getValue() == answers4[1]) {
             housePoints[1] += 1;
-        } else if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 2)) {
+        } else if (answerSelect4.getValue() == answers4[2]) {
             housePoints[2] += 1;
-        } else if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 3)) {
+        } else if (answerSelect4.getValue() == answers4[3]) {
             housePoints[3] += 1;
         }
         
-        if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 0)) {
+        if (answerSelect5.getValue() == answers5[0]) {
             housePoints[0] += 1;
-        } else if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 1)) {
+        } else if (answerSelect5.getValue() == answers5[1]) {
             housePoints[1] += 1;
-        } else if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 2)) {
+        } else if (answerSelect5.getValue() == answers5[2]) {
             housePoints[2] += 1;
-        } else if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 3)) {
+        } else if (answerSelect5.getValue() == answers5[3]) {
             housePoints[3] += 1;
         }
         
@@ -160,10 +169,6 @@ public class QuizController implements Initializable{
            System.out.println("Error: Can't create a house.");
        }
        return null;
-    }
-    
-    public String getSpecificAnswer(String[] allAnswers, int answerNum) {
-        return allAnswers[answerNum];
     }
     
     void initQuestions() {
