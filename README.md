@@ -37,3 +37,8 @@ Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler
 - Ethan Kvachkoff
 - Zach Butler
 - Catlin Kramka
+
+#### References
+ - Hogwarts logo PNG. Hogwarts Logo Png-Free Transparent PNG Logos. (n.d.). April,2023, 
+ 	https://www.freepnglogos.com/pics/hogwarts 
+
