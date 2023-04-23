@@ -173,21 +173,25 @@ public class QuizController implements Initializable{
        if (housePoints[0] == Questions.getLargestNumber(housePoints)) {
            tempPop = houseArray.houses[0].getPopulation();
            houseArray.houses[0].setPopulation(tempPop+1);
+           houseArray.write("houses.txt");
            House hufflepuff = new House("Hufflepuff", "Yellow & Black", "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.", houseArray.houses[0].getPopulation()); // FIX POPULATIOn
            return hufflepuff; 
        } else if (housePoints[1] == Questions.getLargestNumber(housePoints)) {
            tempPop = houseArray.houses[1].getPopulation();
            houseArray.houses[1].setPopulation(tempPop+1);
+           houseArray.write("houses.txt");
            House slytherin = new House("Slytherin", "Green & Silver", "Slytherins tend to be ambitious, shrewd, cunning, strong leaders, and achievement-oriented.", houseArray.houses[1].getPopulation());
            return slytherin; 
        } else if (housePoints[2] == Questions.getLargestNumber(housePoints)) {
            tempPop = houseArray.houses[2].getPopulation();
            houseArray.houses[2].setPopulation(tempPop+1);
+           houseArray.write("houses.txt");
            House gryffindor = new House("Gryffindor", "Red & Gold", "Gryffindor is know to have te traits of courage as well as daring, nerve, and chivarly. Very Brave.", houseArray.houses[2].getPopulation());
            return gryffindor; 
        } else if (housePoints[3] == Questions.getLargestNumber(housePoints)) {
            tempPop = houseArray.houses[3].getPopulation();
            houseArray.houses[3].setPopulation(tempPop+1);
+           houseArray.write("houses.txt");
            House ravenclaw = new House("Ravenclaw", "Blue & Bronze", "Ravenclaws possess the traits of cleverness, wisdom, wit, intellectual ability and creativity.", houseArray.houses[3].getPopulation());
            return ravenclaw; 
        } else {
