@@ -22,7 +22,7 @@
                   <Font name="Castellar" size="40.0" />
                </font>
             </Label>
-            <ListView layoutX="25.0" layoutY="149.0" prefHeight="201.0" prefWidth="144.0" style="-fx-background-color: #222F5B; -fx-border-color: #946B2D;" />
+            <ListView fx:id="houseNames" layoutX="25.0" layoutY="149.0" prefHeight="201.0" prefWidth="144.0" style="-fx-background-color: #222F5B; -fx-border-color: #946B2D;" />
             <Label layoutX="25.0" layoutY="113.0" prefHeight="36.0" prefWidth="87.0" text="Houses:" textFill="#946b2d">
                <font>
                   <Font name="Castellar" size="18.0" />
