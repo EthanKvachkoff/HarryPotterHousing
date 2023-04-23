@@ -3,6 +3,7 @@
 package application;
 
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -60,90 +61,106 @@ public class QuizController implements Initializable{
     
     Questions[] questionsArray = new Questions[5];
     
-    String[] answers1 = {"Phoenix Feather", "Bagder fur", "Dragons scale", "Eagles feather"};
-    String[] answers2 = {"Be up for the challenge, no question", 
-            "Not sure about breaking the rules, but not willing to let your friends go alone", 
-            "See it as an opportunity to report your friends to the head of house to get ahead",
-            "See this as a great learning opportunity"};
-    String[] answers3 = {"Be very proud of yourself and not mention it to your friend",
-            "Be happy for your marks, keep it to yourself and then help tutor your friend",
-            "Be very proud of yourself and let your friends know, as well as anyone else in earshot",
-            "Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun"};
-    String[] answers4 = {"you play with integrity and chivarly",
-            "You play with integrity and fairness",
-            "You play with cunning and always look for an opportunity to have the upper hand",
-            "You play with intelligence and creativity"};
-    String[] answers5 = {"You pick up the box and hand it back",
-            "You pick up the box, and hand it back and apologize for it happening",
-            "You pick up the box and slip it into your pocket",
-            "You magically place the box back in the person's pocket without them noticing"};
+    public User usableUser;
+    
+    String[] answers1 = {"A) Phoenix Feather", "B) Bagder fur", "C) Dragons scale", "D) Eagles feather"};
+    String[] answers2 = {
+            "A) Be up for the challenge, no question", 
+            "B) Not sure about breaking the rules, but not willing to let your friends go alone", 
+            "C) See it as an opportunity to report your friends to the head of house to get ahead",
+            "D) See this as a great learning opportunity"};
+    String[] answers3 = {
+            "A) Be very proud of yourself and not mention it to your friend",
+            "B) Be happy for your marks, keep it to yourself and then help tutor your friend",
+            "C) Be very proud of yourself and let your friends know, as well as anyone else in earshot",
+            "D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun"};
+    String[] answers4 = {
+            "A) you play with integrity and chivarly",
+            "B) You play with integrity and fairness",
+            "C) You play with cunning and always look for an opportunity to have the upper hand",
+            "D) You play with intelligence and creativity"};
+    String[] answers5 = {
+            "A) You pick up the box and hand it back",
+            "B) You pick up the box, and hand it back and apologize for it happening",
+            "C) You pick up the box and slip it into your pocket",
+            "D) You magically place the box back in the person's pocket without them noticing"};
     
     @FXML
     void handleSubmitButtonAction(ActionEvent event) {
         try {
-            String userName;
-            userName = nameTextField.getText();
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
+            House userHouse = calculateHouse();
+            usableUser = createUser(userHouse);
+            System.out.println(usableUser.getName()+ "\n"+ usableUser.getHouse().name + "\n" + usableUser.id + "\n" + usableUser.pet); // test case
             stage.close();
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
     
+    private User createUser(House userHouse) {
+        /*ADD A CHECK TO SEE IF RANDOM NUM IS ALREADY AN ID THEN REGENERATE IF TRUE*/
+        Random rand = new Random();
+        int userId = rand.nextInt(10000) + 1;
+        String userName;
+        userName = nameTextField.getText();      
+        User user = new User(userId, userName, User.assignPet(userHouse), userHouse);
+        return user;
+    }
+    
     private House calculateHouse() {
         int[] housePoints = new int[4];
         House house;
         
-        if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 0)) {
+        if (answerSelect1.getValue() == answers1[0]) {
             housePoints[0] += 1;
-        } else if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 1)) {
+        } else if (answerSelect1.getValue() == answers1[1]) {
             housePoints[1] += 1;
-        } else if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 2)) {
+        } else if (answerSelect1.getValue() == answers1[2]) {
             housePoints[2] += 1;
-        } else if (answerSelect1.getValue() == getSpecificAnswer(questionsArray[0].getAnswers(), 3)) {
+        } else if (answerSelect1.getValue() == answers1[3]) {
             housePoints[3] += 1;
         }
         
-        if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 0)) {
+        if (answerSelect2.getValue() == answers2[0]) {
             housePoints[0] += 1;
-        } else if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 1)) {
+        } else if (answerSelect2.getValue() == answers2[1]) {
             housePoints[1] += 1;
-        } else if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 2)) {
+        } else if (answerSelect2.getValue() == answers2[2]) {
             housePoints[2] += 1;
-        } else if (answerSelect2.getValue() == getSpecificAnswer(questionsArray[1].getAnswers(), 3)) {
+        } else if (answerSelect2.getValue() == answers2[3]) {
             housePoints[3] += 1;
         }
         
-        if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 0)) {
+        if (answerSelect3.getValue() == answers3[0]) {
             housePoints[0] += 1;
-        } else if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 1)) {
+        } else if (answerSelect3.getValue() == answers3[1]) {
             housePoints[1] += 1;
-        } else if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 2)) {
+        } else if (answerSelect3.getValue() == answers3[2]) {
             housePoints[2] += 1;
-        } else if (answerSelect3.getValue() == getSpecificAnswer(questionsArray[2].getAnswers(), 3)) {
+        } else if (answerSelect3.getValue() == answers3[3]) {
             housePoints[3] += 1;
         }
         
-        if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 0)) {
+        if (answerSelect4.getValue() == answers4[0]) {
             housePoints[0] += 1;
-        } else if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 1)) {
+        } else if (answerSelect4.getValue() == answers4[1]) {
             housePoints[1] += 1;
-        } else if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 2)) {
+        } else if (answerSelect4.getValue() == answers4[2]) {
             housePoints[2] += 1;
-        } else if (answerSelect4.getValue() == getSpecificAnswer(questionsArray[3].getAnswers(), 3)) {
+        } else if (answerSelect4.getValue() == answers4[3]) {
             housePoints[3] += 1;
         }
         
-        if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 0)) {
+        if (answerSelect5.getValue() == answers5[0]) {
             housePoints[0] += 1;
-        } else if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 1)) {
+        } else if (answerSelect5.getValue() == answers5[1]) {
             housePoints[1] += 1;
-        } else if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 2)) {
+        } else if (answerSelect5.getValue() == answers5[2]) {
             housePoints[2] += 1;
-        } else if (answerSelect5.getValue() == getSpecificAnswer(questionsArray[4].getAnswers(), 3)) {
+        } else if (answerSelect5.getValue() == answers5[3]) {
             housePoints[3] += 1;
         }
-        
        if (housePoints[0] == Questions.getLargestNumber(housePoints)) {
            House hufflepuff = new House("Hufflepuff", "Yellow & Black", "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.", 12); // FIX POPULATIOn
            return hufflepuff; 
@@ -158,12 +175,8 @@ public class QuizController implements Initializable{
            return ravenclaw; 
        } else {
            System.out.println("Error: Can't create a house.");
+           return null;
        }
-       return null;
-    }
-    
-    public String getSpecificAnswer(String[] allAnswers, int answerNum) {
-        return allAnswers[answerNum];
     }
     
     void initQuestions() {
@@ -195,7 +208,7 @@ public class QuizController implements Initializable{
                                 +" ", "D) See this as a great learning opportunity."));
         answerSelect3.setValue("*Select an Answer*");
         answerSelect3.setItems(FXCollections.observableArrayList("A) Be very proud of yourself and not mention it to your friend.", "B) Be happy for your marks, keep it to yourself and then help tutor your friend.\n"
-                + " ", "B) Be very proud of yourself and let your friend know, as well as anyone else in earshot. \n"
+                + " ", "C) Be very proud of yourself and let your friend know, as well as anyone else in earshot. \n"
                         + " ","D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun. "));
         answerSelect4.setValue("*Select an Answer*");
         answerSelect4.setItems(FXCollections.observableArrayList("A) You play with integrity and chivalry.\n"

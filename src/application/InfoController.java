@@ -27,7 +27,6 @@ public class InfoController implements Initializable{
         infoText.appendText("Id: " + "\n");
         infoText.appendText("Name: " + "\n");
         infoText.appendText("House: " + "\n");
-        infoText.appendText("Population: " + "\n");
         infoText.appendText("Pet: " + "\n");
     }
 
