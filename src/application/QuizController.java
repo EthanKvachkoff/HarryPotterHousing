@@ -61,20 +61,26 @@ public class QuizController implements Initializable{
     
     Questions[] questionsArray = new Questions[5];
     
+    public User usableUser;
+    
     String[] answers1 = {"A) Phoenix Feather", "B) Bagder fur", "C) Dragons scale", "D) Eagles feather"};
-    String[] answers2 = {"A) Be up for the challenge, no question", 
+    String[] answers2 = {
+            "A) Be up for the challenge, no question", 
             "B) Not sure about breaking the rules, but not willing to let your friends go alone", 
             "C) See it as an opportunity to report your friends to the head of house to get ahead",
             "D) See this as a great learning opportunity"};
-    String[] answers3 = {"A) Be very proud of yourself and not mention it to your friend",
+    String[] answers3 = {
+            "A) Be very proud of yourself and not mention it to your friend",
             "B) Be happy for your marks, keep it to yourself and then help tutor your friend",
             "C) Be very proud of yourself and let your friends know, as well as anyone else in earshot",
             "D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun"};
-    String[] answers4 = {"A) you play with integrity and chivarly",
+    String[] answers4 = {
+            "A) you play with integrity and chivarly",
             "B) You play with integrity and fairness",
             "C) You play with cunning and always look for an opportunity to have the upper hand",
             "D) You play with intelligence and creativity"};
-    String[] answers5 = {"A) You pick up the box and hand it back",
+    String[] answers5 = {
+            "A) You pick up the box and hand it back",
             "B) You pick up the box, and hand it back and apologize for it happening",
             "C) You pick up the box and slip it into your pocket",
             "D) You magically place the box back in the person's pocket without them noticing"};
@@ -84,7 +90,7 @@ public class QuizController implements Initializable{
         try {
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
             House userHouse = calculateHouse();
-            User usableUser = createUser(userHouse);
+            usableUser = createUser(userHouse);
             System.out.println(usableUser.getName()+ "\n"+ usableUser.getHouse().name + "\n" + usableUser.id + "\n" + usableUser.pet); // test case
             stage.close();
         } catch(Exception e) {
