@@ -61,6 +61,8 @@ public class QuizController implements Initializable{
     
     Questions[] questionsArray = new Questions[5];
     
+    HouseArray houseArray = new HouseArray(4);
+    
     public User usableUser;
     
     String[] answers1 = {"A) Phoenix Feather", "B) Badger fur","C) Dragons scale","D) Eagles feather"};
@@ -111,6 +113,8 @@ public class QuizController implements Initializable{
     private House calculateHouse() {
         int[] housePoints = new int[4];
         House house;
+        
+        int tempPop = 0;
         
         if (answerSelect1.getValue() == answers1[0]) {
             housePoints[0] += 1;
@@ -167,16 +171,24 @@ public class QuizController implements Initializable{
         System.out.println(housePoints[3]);
 
        if (housePoints[0] == Questions.getLargestNumber(housePoints)) {
-           House hufflepuff = new House("Hufflepuff", "Yellow & Black", "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.", 12); // FIX POPULATIOn
+           tempPop = houseArray.houses[0].getPopulation();
+           houseArray.houses[0].setPopulation(tempPop+1);
+           House hufflepuff = new House("Hufflepuff", "Yellow & Black", "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.", houseArray.houses[0].getPopulation()); // FIX POPULATIOn
            return hufflepuff; 
        } else if (housePoints[1] == Questions.getLargestNumber(housePoints)) {
-           House slytherin = new House("Slytherin", "Green & Silver", "Slytherins tend to be ambitious, shrewd, cunning, strong leaders, and achievement-oriented.", 12);
+           tempPop = houseArray.houses[1].getPopulation();
+           houseArray.houses[1].setPopulation(tempPop+1);
+           House slytherin = new House("Slytherin", "Green & Silver", "Slytherins tend to be ambitious, shrewd, cunning, strong leaders, and achievement-oriented.", houseArray.houses[1].getPopulation());
            return slytherin; 
        } else if (housePoints[2] == Questions.getLargestNumber(housePoints)) {
-           House gryffindor = new House("Gryffindor", "Red & Gold", "Gryffindor is know to have te traits of courage as well as daring, nerve, and chivarly. Very Brave.", 12);
+           tempPop = houseArray.houses[2].getPopulation();
+           houseArray.houses[2].setPopulation(tempPop+1);
+           House gryffindor = new House("Gryffindor", "Red & Gold", "Gryffindor is know to have te traits of courage as well as daring, nerve, and chivarly. Very Brave.", houseArray.houses[2].getPopulation());
            return gryffindor; 
        } else if (housePoints[3] == Questions.getLargestNumber(housePoints)) {
-           House ravenclaw = new House("Ravenclaw", "Blue & Bronze", "Ravenclaws possess the traits of cleverness, wisdom, wit, intellectual ability and creativity.", 12);
+           tempPop = houseArray.houses[3].getPopulation();
+           houseArray.houses[3].setPopulation(tempPop+1);
+           House ravenclaw = new House("Ravenclaw", "Blue & Bronze", "Ravenclaws possess the traits of cleverness, wisdom, wit, intellectual ability and creativity.", houseArray.houses[3].getPopulation());
            return ravenclaw; 
        } else {
            System.out.println("Error: Can't create a house.");
@@ -202,7 +214,6 @@ public class QuizController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-    	HouseArray houseArray = new HouseArray(4);
 		houseArray.loadHouse(houseArray);
         answerSelect1.setValue("*Select an Answer*");
         answerSelect1.setItems(FXCollections.observableArrayList("A) Phoenix Feather", "B) Badger fur","C) Dragons scale","D) Eagles feather"));

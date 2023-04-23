@@ -1,3 +1,12 @@
+Hufflepuff
+Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.
+Yellow
+0
+
+Slytherin
+Slytherins tend to be ambitious, shrewd, cunning, strong leaders, and achievement-oriented.
+Green
+0
 Gryffindor
 Gryffindor is know to have the traits of courage as well as daring, nerve, and chivalry. Very Brave.
 Red
@@ -6,11 +15,4 @@ Ravenclaw
 Ravenclaws possess the traits of cleverness, wisdom, wit, intellectual ability and creativity.
 Blue
 0
-Slytherin
-Slytherins tend to be ambitious, shrewd, cunning, strong leaders, and achievement-oriented.
-Green
-0
-Hufflepuff
-Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.
-Yellow
-0
+
