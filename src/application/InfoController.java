@@ -25,18 +25,28 @@ public class InfoController implements Initializable{
     private TextArea infoText;
     
     UserList userList = new UserList();
+    
+    public static User tempUser;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        infoText.appendText("Id: " + "\n");
-        infoText.appendText("Name: " + "\n");
-        infoText.appendText("House: " + "\n");
-        infoText.appendText("Pet: " + "\n");
         showUserInfo();
     }
     
     public void showUserInfo() {
-        userList = UserList.grabUsers();  
-        System.out.println(userList.users.get(0).getName() + " " + userList.users.get(0).getId()+ " " + userList.users.get(0).getHouse().getName()+ " " + userList.users.get(0).getPet());
+        if (tempUser != null) {
+            infoText.appendText("Id: "+ tempUser.getId() + "\n");
+            infoText.appendText("Name: "+ tempUser.getName() + "\n");
+            infoText.appendText("House: "+ tempUser.getHouse().getName() + "\n");
+            infoText.appendText("Pet: "+ tempUser.getPet() + "\n");
+        } else {
+            infoText.appendText("Id: " + "\n");
+            infoText.appendText("Name: " + "\n");
+            infoText.appendText("House: " + "\n");
+            infoText.appendText("Pet: " + "\n");
+        }
+        
+        //userList = UserList.grabUsers();  
+        //System.out.println(userList.users.get(0).getName() + " " + userList.users.get(0).getId()+ " " + userList.users.get(0).getHouse().getName()+ " " + userList.users.get(0).getPet());
     }
 }

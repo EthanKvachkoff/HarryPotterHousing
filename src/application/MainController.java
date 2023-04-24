@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -27,6 +28,14 @@ public class MainController implements Initializable{
     
     @FXML
     private TextArea aboutTextArea;
+    
+    @FXML
+    private Button findUserById;
+    
+    @FXML
+    private TextField searchId;
+    
+    UserList userList = new UserList();
     
     @FXML
     void handleInfoButtonAction(ActionEvent event) {
@@ -54,7 +63,32 @@ public class MainController implements Initializable{
         } catch(Exception e) {
             e.printStackTrace();
         }
-    }  
+    } 
+    
+    @FXML
+    void findUser(ActionEvent event) {
+        try {
+            if (searchId.getText() != null) {
+                int id = Integer.parseInt(searchId.getText());
+                userList = UserList.grabUsers();
+                for (int i = 0; i < userList.users.size(); i++) {
+                    if (id == userList.users.get(i).getId()) {
+                        User user = userList.findUser(id);
+                        InfoController.tempUser = user;
+                        System.out.println("User Found");
+                        break;
+                    }
+                }
+                System.out.println("User Not Found");
+            } else { 
+                System.out.println("User Not Found");
+            }  
+        } catch (NumberFormatException e) {
+            System.out.println("The string is not a number");
+        }
+       
+        
+    }
     
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
