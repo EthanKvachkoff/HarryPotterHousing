@@ -95,6 +95,7 @@ public class QuizController implements Initializable{
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
             House userHouse = calculateHouse();
             usableUser = createUser(userHouse);
+            userList = UserList.grabUsers();
             userList.users.add(usableUser);
             userList.write("users.txt");
             System.out.println(usableUser.getName()+ "\n"+ usableUser.getHouse().name + "\n" + usableUser.id + "\n" + usableUser.pet); // test case

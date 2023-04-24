@@ -4,6 +4,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -35,6 +36,7 @@ public class InfoController implements Initializable{
     }
     
     public void showUserInfo() {
-  
+        userList = UserList.grabUsers();  
+        System.out.println(userList.users.get(0).getName() + " " + userList.users.get(0).getId()+ " " + userList.users.get(0).getHouse().getName()+ " " + userList.users.get(0).getPet());
     }
 }

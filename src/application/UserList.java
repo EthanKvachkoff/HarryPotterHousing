@@ -72,5 +72,58 @@ public class UserList {
         	}
         
     }
+    
+    public static void readUsers(int id) {
+        BufferedReader reader;
+
+        try {
+            reader = new BufferedReader(new FileReader("users.txt"));
+            String line = reader.readLine();
+
+            while (line != null) {
+                if (id == Integer.parseInt(line)) {
+                    for (int i = 0; i <= 3; i++) {
+                        System.out.println(line);
+                        line = reader.readLine();
+                    }
+                    break;
+                } else {
+                    System.out.println("ERROR");
+                    break;
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static UserList grabUsers() {
+        UserList userList = new UserList();
+        String name = "";
+        String pet = ""; 
+        String house = "";
+        int id = 0;
+
+        try {
+            Scanner scanner = new Scanner(new File("users.txt"));
+
+            while (scanner.hasNextLine()) {
+                id = Integer.parseInt(scanner.nextLine());
+                if (id >= 0) {
+                        name = scanner.nextLine();
+                        house = scanner.nextLine();
+                        pet = scanner.nextLine();
+                        User user =  new User(id, name, pet, new House(house, "", "", 0));
+                        userList.users.add(user);
+                }
+            }
+            scanner.close();
+            return userList;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }
