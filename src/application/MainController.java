@@ -20,7 +20,7 @@ import javafx.event.ActionEvent;
 
 public class MainController implements Initializable{
 	@FXML
-	private ListView<String> houseNames;
+	private ListView<String> houseName;
 
     @FXML
     private Button houseInfoButton;
@@ -37,7 +37,7 @@ public class MainController implements Initializable{
     @FXML
     private TextField searchId;
     
-    String[] house = { "Gryffindor\n" , "Hufflepuff\n", "Slytherin", "Ravenclaw" };
+    String[] house = { "Gryffindor\n" , "Hufflepuff\n", " Slytherin", "Ravenclaw" };
     
     UserList userList = new UserList();
     
@@ -100,7 +100,7 @@ public class MainController implements Initializable{
         aboutTextArea.appendText("After taking the quiz, based on your answers you will be sorted into a Hogwarts house.\n");
         aboutTextArea.appendText("To begin click the 'Start Quiz' button.\n");
         aboutTextArea.appendText("To access house information click the 'House Information' button.\n");
-        houseNames.getItems().addAll(house);
+        houseName.getItems().addAll(house);
     }
 
 }
