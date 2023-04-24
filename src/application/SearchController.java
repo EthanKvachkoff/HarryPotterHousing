@@ -28,10 +28,14 @@ public class SearchController implements Initializable{
     @FXML
     private Label errorLabel;
     
-    @FXML
+    @FXML 
     private Label idLabel;
     
-    public static boolean isIdError;
+    public static boolean isIdError = false;
+    
+    public static boolean validInput = false;
+    
+    public static int userId = 00000;
     
     @FXML
     void handleCloseButtonAction(ActionEvent event) {
@@ -45,8 +49,15 @@ public class SearchController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        // TODO Auto-generated method stub
-        
+        if (isIdError == true) {
+            idLabel.setText("ERROR:");
+            errorLabel.setText("ID not found! Enter a valid ID."); 
+        } 
+        if (validInput == true) {
+            idLabel.setText("ID: " + userId);
+            errorLabel.setText("FOUND! House Information Updated!"); 
+        } 
+       
     }
 
 }

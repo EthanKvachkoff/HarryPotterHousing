@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -36,6 +37,9 @@ public class MainController implements Initializable{
     private TextField searchId;
     
     UserList userList = new UserList();
+    
+    @FXML
+    private Label errorLabel;
     
     @FXML
     void handleInfoButtonAction(ActionEvent event) {
@@ -76,20 +80,39 @@ public class MainController implements Initializable{
                         User user = userList.findUser(id);
                         InfoController.tempUser = user;
                         System.out.println("User Found");
+                        SearchController.validInput = true;
+                        SearchController.userId = id;
+                        idDialogBox();
                         break;
                     }
                 }
+                SearchController.isIdError = true;
+                idDialogBox();
                 System.out.println("User Not Found");
-            } else { 
+            } else {
+                SearchController.isIdError = true;
+                idDialogBox();
                 System.out.println("User Not Found");
             }  
         } catch (NumberFormatException e) {
+            SearchController.isIdError = true;
+            idDialogBox();
             System.out.println("The string is not a number");
         }
-       
-        
     }
     
+    public void idDialogBox() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("IdSearch.fxml"));
+            Parent root2 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("ID:");
+            stage.setScene(new Scene(root2, 280, 125));
+            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        } 
+    }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         aboutTextArea.appendText("Welcome to the Harry Potter House Quiz! \n");
