@@ -61,29 +61,33 @@ public class QuizController implements Initializable{
     
     Questions[] questionsArray = new Questions[5];
     
+    HouseArray houseArray = new HouseArray(4);
+    
+    UserList userList = new UserList();
+    
     public User usableUser;
     
-    String[] answers1 = {"A) Phoenix Feather", "B) Bagder fur", "C) Dragons scale", "D) Eagles feather"};
+    String[] answers1 = {"A) Phoenix Feather", "B) Badger fur","C) Dragons scale","D) Eagles feather"};
     String[] answers2 = {
-            "A) Be up for the challenge, no question", 
-            "B) Not sure about breaking the rules, but not willing to let your friends go alone", 
-            "C) See it as an opportunity to report your friends to the head of house to get ahead",
-            "D) See this as a great learning opportunity"};
+            "A) Be up for the challenge, no question.", 
+            "B) Not sure about breaking the rules, but not willing to let your friends go alone.",
+            "C) See it as an opportunity to report your friends to the head of house to get ahead.", 
+            "D) See this as a great learning opportunity."};
     String[] answers3 = {
-            "A) Be very proud of yourself and not mention it to your friend",
-            "B) Be happy for your marks, keep it to yourself and then help tutor your friend",
-            "C) Be very proud of yourself and let your friends know, as well as anyone else in earshot",
-            "D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun"};
+            "A) Be very proud of yourself and not mention it to your friend.", 
+            "B) Be happy for your marks, keep it to yourself and then help tutor your friend.", 
+            "C) Be very proud of yourself and let your friend know, as well as anyone else in earshot.",
+            "D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun."};
     String[] answers4 = {
-            "A) you play with integrity and chivarly",
-            "B) You play with integrity and fairness",
-            "C) You play with cunning and always look for an opportunity to have the upper hand",
-            "D) You play with intelligence and creativity"};
+            "A) You play with integrity and chivalry.", 
+            "B) You play with integrity and fairness.",
+            "C) You play with cunning and always look for an opportunity to have the upper hand.",
+            "D) You play with intelligence and creativity."};
     String[] answers5 = {
-            "A) You pick up the box and hand it back",
-            "B) You pick up the box, and hand it back and apologize for it happening",
-            "C) You pick up the box and slip it into your pocket",
-            "D) You magically place the box back in the person's pocket without them noticing"};
+            "A) You pick up the box and hand it back.", 
+            "B) You pick up the box, hand it back and apologize for it happening.", 
+            "C) You pick up the box and slip it into your pocket to keep for yourself.", 
+            "D) You magically place the box back in the person’s pocket without them noticing."};
     
     @FXML
     void handleSubmitButtonAction(ActionEvent event) {
@@ -91,6 +95,8 @@ public class QuizController implements Initializable{
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
             House userHouse = calculateHouse();
             usableUser = createUser(userHouse);
+            userList.users.add(usableUser);
+            userList.write("users.txt");
             System.out.println(usableUser.getName()+ "\n"+ usableUser.getHouse().name + "\n" + usableUser.id + "\n" + usableUser.pet); // test case
             stage.close();
         } catch(Exception e) {
@@ -111,6 +117,8 @@ public class QuizController implements Initializable{
     private House calculateHouse() {
         int[] housePoints = new int[4];
         House house;
+        
+        int tempPop = 0;
         
         if (answerSelect1.getValue() == answers1[0]) {
             housePoints[0] += 1;
@@ -161,17 +169,34 @@ public class QuizController implements Initializable{
         } else if (answerSelect5.getValue() == answers5[3]) {
             housePoints[3] += 1;
         }
+        System.out.println(housePoints[0]);
+        System.out.println(housePoints[1]);
+        System.out.println(housePoints[2]);
+        System.out.println(housePoints[3]);
+
        if (housePoints[0] == Questions.getLargestNumber(housePoints)) {
-           House hufflepuff = new House("Hufflepuff", "Yellow & Black", "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.", 12); // FIX POPULATIOn
+           tempPop = houseArray.houses[0].getPopulation();
+           houseArray.houses[0].setPopulation(tempPop+1);
+           houseArray.write("houses.txt");
+           House hufflepuff = new House("Hufflepuff", "Yellow & Black", "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.", houseArray.houses[0].getPopulation()); // FIX POPULATIOn
            return hufflepuff; 
        } else if (housePoints[1] == Questions.getLargestNumber(housePoints)) {
-           House slytherin = new House("Slytherin", "Green & Silver", "Slytherins tend to be ambitious, shrewd, cunning, strong leaders, and achievement-oriented.", 12);
+           tempPop = houseArray.houses[1].getPopulation();
+           houseArray.houses[1].setPopulation(tempPop+1);
+           houseArray.write("houses.txt");
+           House slytherin = new House("Slytherin", "Green & Silver", "Slytherins tend to be ambitious, shrewd, cunning, strong leaders, and achievement-oriented.", houseArray.houses[1].getPopulation());
            return slytherin; 
        } else if (housePoints[2] == Questions.getLargestNumber(housePoints)) {
-           House gryffindor = new House("Gryffindor", "Red & Gold", "Gryffindor is know to have te traits of courage as well as daring, nerve, and chivarly. Very Brave.", 12);
+           tempPop = houseArray.houses[2].getPopulation();
+           houseArray.houses[2].setPopulation(tempPop+1);
+           houseArray.write("houses.txt");
+           House gryffindor = new House("Gryffindor", "Red & Gold", "Gryffindor is know to have te traits of courage as well as daring, nerve, and chivarly. Very Brave.", houseArray.houses[2].getPopulation());
            return gryffindor; 
        } else if (housePoints[3] == Questions.getLargestNumber(housePoints)) {
-           House ravenclaw = new House("Ravenclaw", "Blue & Bronze", "Ravenclaws possess the traits of cleverness, wisdom, wit, intellectual ability and creativity.", 12);
+           tempPop = houseArray.houses[3].getPopulation();
+           houseArray.houses[3].setPopulation(tempPop+1);
+           houseArray.write("houses.txt");
+           House ravenclaw = new House("Ravenclaw", "Blue & Bronze", "Ravenclaws possess the traits of cleverness, wisdom, wit, intellectual ability and creativity.", houseArray.houses[3].getPopulation());
            return ravenclaw; 
        } else {
            System.out.println("Error: Can't create a house.");
@@ -197,27 +222,33 @@ public class QuizController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-    	HouseArray houseArray = new HouseArray(4);
 		houseArray.loadHouse(houseArray);
         answerSelect1.setValue("*Select an Answer*");
         answerSelect1.setItems(FXCollections.observableArrayList("A) Phoenix Feather", "B) Badger fur","C) Dragons scale","D) Eagles feather"));
         answerSelect2.setValue("*Select an Answer*");
-        answerSelect2.setItems(FXCollections.observableArrayList("A) Be up for the challenge, no question.\n"
-                + " ", "B) Not sure about breaking the rules, but not willing to let your friends go alone. \n"
-                        + "","C) See it as an opportunity to report your friends to the head of house to get ahead.\n"
-                                +" ", "D) See this as a great learning opportunity."));
+        answerSelect2.setItems(FXCollections.observableArrayList(
+                "A) Be up for the challenge, no question.", 
+                "B) Not sure about breaking the rules, but not willing to let your friends go alone.",
+                "C) See it as an opportunity to report your friends to the head of house to get ahead.",
+                "D) See this as a great learning opportunity."));
         answerSelect3.setValue("*Select an Answer*");
-        answerSelect3.setItems(FXCollections.observableArrayList("A) Be very proud of yourself and not mention it to your friend.", "B) Be happy for your marks, keep it to yourself and then help tutor your friend.\n"
-                + " ", "C) Be very proud of yourself and let your friend know, as well as anyone else in earshot. \n"
-                        + " ","D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun. "));
+        answerSelect3.setItems(FXCollections.observableArrayList(
+                "A) Be very proud of yourself and not mention it to your friend.", 
+                "B) Be happy for your marks, keep it to yourself and then help tutor your friend.", 
+                "C) Be very proud of yourself and let your friend know, as well as anyone else in earshot.",
+                "D) Not surprised at all by your good marks, not mention it to friends and take on extra credit for fun."));
         answerSelect4.setValue("*Select an Answer*");
-        answerSelect4.setItems(FXCollections.observableArrayList("A) You play with integrity and chivalry.\n"
-                + " ", "B) You play with integrity and fairness.\n" + " ","C) You play with cunning and always look for an opportunity to have the upper hand.\n"+ " ","D) You play with intelligence and creativity. "));
+        answerSelect4.setItems(FXCollections.observableArrayList(
+                "A) You play with integrity and chivalry.", 
+                "B) You play with integrity and fairness.",
+                "C) You play with cunning and always look for an opportunity to have the upper hand.",
+                "D) You play with intelligence and creativity."));
         answerSelect5.setValue("*Select an Answer*");  
-        answerSelect5.setItems(FXCollections.observableArrayList("A) You pick up the box and hand it back.\n", "B) You pick up the box, hand it back and apologize for it happening.\n"
-                + " ", "C) You pick up the box and slip it into your pocket to keep for yourself.\n"
-                + " ", "D) You magically place the box back in the person’s pocket without them noticing. "));
-        
+        answerSelect5.setItems(FXCollections.observableArrayList(
+                "A) You pick up the box and hand it back.", 
+                "B) You pick up the box, hand it back and apologize for it happening.", 
+                "C) You pick up the box and slip it into your pocket to keep for yourself.", 
+                "D) You magically place the box back in the person’s pocket without them noticing."));     
         initQuestionArray();
         initQuestions();
     } 

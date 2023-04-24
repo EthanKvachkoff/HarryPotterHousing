@@ -2,6 +2,7 @@
 // Authors: Catlin Kramka/Zach Butler/Ethan Kvachkoff
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -21,6 +22,8 @@ public class InfoController implements Initializable{
     
     @FXML
     private TextArea infoText;
+    
+    UserList userList = new UserList();
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -28,6 +31,10 @@ public class InfoController implements Initializable{
         infoText.appendText("Name: " + "\n");
         infoText.appendText("House: " + "\n");
         infoText.appendText("Pet: " + "\n");
+        showUserInfo();
     }
-
+    
+    public void showUserInfo() {
+  
+    }
 }

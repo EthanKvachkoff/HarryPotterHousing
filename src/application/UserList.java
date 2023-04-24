@@ -1,7 +1,11 @@
 package application;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -25,11 +29,11 @@ public class UserList {
                     scan.nextLine();
                 }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+   
     
  // Write user's id, name, pet, and house to file
     public void write(String filename) {
@@ -60,11 +64,11 @@ public class UserList {
         	if (u == null) {
         		System.out.println("User with id " + id + " not found.");
         	} else {
-            System.out.println("ID: " + u.id);
-            System.out.println("Name: " + u.name);
-            System.out.println("Pet: " + u.pet);
-            System.out.println("House: " + u.getHouse().name);
-            System.out.println();
+        	    System.out.println("ID: " + u.id);
+        	    System.out.println("Name: " + u.name);
+        	    System.out.println("Pet: " + u.pet);
+        	    System.out.println("House: " + u.getHouse().name);
+        	    System.out.println();
         	}
         
     }

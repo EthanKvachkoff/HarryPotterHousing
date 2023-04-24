@@ -61,8 +61,7 @@ public class HouseArray {
     
     // Loads each house from file and puts them in houseArray
     public void loadHouse(HouseArray houseArray) {
-    		houseArray.read("houses.txt");
-    	
+    		houseArray.read("houses.txt");	
     }
 	
 }
