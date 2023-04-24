@@ -93,7 +93,6 @@ public class QuizController implements Initializable{
     void handleSubmitButtonAction(ActionEvent event) {
         try {
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
-            userList.read("users.txt");
             House userHouse = calculateHouse();
             usableUser = createUser(userHouse);
             userList.users.add(usableUser);
