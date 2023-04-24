@@ -34,8 +34,8 @@
                   <Font name="Castellar" size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="242.0" layoutY="303.0" prefHeight="25.0" prefWidth="56.0" promptText="ID" />
-            <Button layoutX="316.0" layoutY="303.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Find" />
+            <TextField fx:id="searchId" layoutX="242.0" layoutY="303.0" prefHeight="25.0" prefWidth="56.0" promptText="ID" />
+            <Button fx:id="findUserById" layoutX="316.0" layoutY="303.0" mnemonicParsing="false" onAction="#findUser" prefHeight="25.0" prefWidth="93.0" text="Find" />
             <ImageView fitHeight="125.0" fitWidth="191.0" layoutX="31.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Resources/Hogwarts%20Crest.png" />
