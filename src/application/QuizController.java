@@ -63,6 +63,8 @@ public class QuizController implements Initializable{
     
     HouseArray houseArray = new HouseArray(4);
     
+    UserList userList = new UserList();
+    
     public User usableUser;
     
     String[] answers1 = {"A) Phoenix Feather", "B) Badger fur","C) Dragons scale","D) Eagles feather"};
@@ -91,8 +93,11 @@ public class QuizController implements Initializable{
     void handleSubmitButtonAction(ActionEvent event) {
         try {
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
+            userList.read("users.txt");
             House userHouse = calculateHouse();
             usableUser = createUser(userHouse);
+            userList.users.add(usableUser);
+            userList.write("users.txt");
             System.out.println(usableUser.getName()+ "\n"+ usableUser.getHouse().name + "\n" + usableUser.id + "\n" + usableUser.pet); // test case
             stage.close();
         } catch(Exception e) {
@@ -244,8 +249,7 @@ public class QuizController implements Initializable{
                 "A) You pick up the box and hand it back.", 
                 "B) You pick up the box, hand it back and apologize for it happening.", 
                 "C) You pick up the box and slip it into your pocket to keep for yourself.", 
-                "D) You magically place the box back in the person’s pocket without them noticing."));
-        
+                "D) You magically place the box back in the person’s pocket without them noticing."));     
         initQuestionArray();
         initQuestions();
     } 
