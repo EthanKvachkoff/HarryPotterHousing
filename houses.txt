@@ -9,7 +9,7 @@ Green
 Gryffindor
 Gryffindor is know to have the traits of courage as well as daring, nerve, and chivalry. Very Brave.
 Red
-0
+2
 Ravenclaw
 Ravenclaws possess the traits of cleverness, wisdom, wit, intellectual ability and creativity.
 Blue
