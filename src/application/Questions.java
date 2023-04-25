@@ -3,20 +3,18 @@
 package application;
 
 public class Questions {
-    //Instance variables
-   
-    String prompt;
-    
-    String answers[];
-   
+    // Instance variables
 
-    //Non-default constructor
-    public Questions (String prompt, String answers[]) {
+    String prompt;
+
+    String answers[];
+
+    // Non-default constructor
+    public Questions(String prompt, String answers[]) {
         super();
         this.prompt = prompt;
-        this.answers = null;  
+        this.answers = null;
     }
-
 
     /**
      * @return the prompts
@@ -45,13 +43,14 @@ public class Questions {
     public void setAnswers(String answerss[]) {
         this.answers = answerss;
     }
+
     // Used to return the largest number of points in an array
     // Used to check for which house the user suits best with
     public static int getLargestNumber(int[] arr) {
         int highestNum = arr[0];
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > highestNum) {
-                highestNum = arr[i];  
+                highestNum = arr[i];
             }
         }
         return highestNum;

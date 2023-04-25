@@ -9,14 +9,13 @@ import java.util.Scanner;
 public class User {
 
     // Instance variables
-	int id;
+    int id;
     String name, pet;
-    
-    
-    //Aggregation relationship
+
+    // Aggregation relationship
     private House house;
-    
-    //Non-default constructor
+
+    // Non-default constructor
     public User(int id, String name, String pet, House house) {
         super();
         this.id = id;
@@ -24,61 +23,62 @@ public class User {
         this.pet = pet;
         this.house = house;
     }
-    
+
     // Get methods
     public int getId() {
-    	return id;
+        return id;
     }
-    
+
     public String getName() {
         return name;
     }
-    
+
     public String getPet() {
         return pet;
     }
-    
+
     public House getHouse() {
         return house;
     }
-    
+
     // Set methods
     public void setId(int id) {
-    	this.id = id;
+        this.id = id;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public void setPet(String pet) {
         this.pet = pet;
     }
-    
+
     public void setHouse(House house) {
         this.house = house;
     }
-    
+
+    // Method assigns a pet to a user based on their house
     public static String assignPet(House house) {
         if (house.getName() == "Slytherin") {
-           return "Snake";
-        }else if (house.getName() == "Hufflepuff") {
-            return "Cat";    
-        }else if (house.getName() == "Gryffindor") {
-            return "Owl";    
-        }else if (house.getName() == "Ravenclaw"){
-            return "Toad";       
+            return "Snake";
+        } else if (house.getName() == "Hufflepuff") {
+            return "Cat";
+        } else if (house.getName() == "Gryffindor") {
+            return "Owl";
+        } else if (house.getName() == "Ravenclaw") {
+            return "Toad";
         } else {
-            System.out.println("No suitable house found. Can't assign a pet."); 
+            System.out.println("No suitable house found. Can't assign a pet.");
             return "No Pet";
         }
     }
- 
- // Reads user's id, name, pet, and house from given file
+
+    // Reads user's id, name, pet, and house from given file
     public void read(String filename) {
         File f = new File(filename);
         try (Scanner scan = new Scanner(f)) {
-        	id = scan.nextInt();
+            id = scan.nextInt();
             name = scan.nextLine();
             pet = scan.nextLine();
             house.name = scan.nextLine();
@@ -90,7 +90,7 @@ public class User {
     // Reads multiple objects from the same file
     public void read(Scanner scan) {
         if (scan.hasNext()) {
-        	id = scan.nextInt();
+            id = scan.nextInt();
             name = scan.nextLine();
             pet = scan.nextLine();
             house.name = scan.nextLine();
@@ -117,4 +117,3 @@ public class User {
         }
     }
 }
-
