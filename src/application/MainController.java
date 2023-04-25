@@ -45,7 +45,9 @@ public class MainController implements Initializable{
     @FXML
     private ListView<String> houseName;
     
-    String[] house = { "Gryffindor\n" , "Hufflepuff\n", " Slytherin", "Ravenclaw" };
+    String[] house = { "Gryffindor" , "Hufflepuff", "Slytherin", "Ravenclaw" };
+    
+    HouseArray houseArray = new HouseArray(4);
     
     @FXML
     void handleInfoButtonAction(ActionEvent event) {
@@ -127,6 +129,12 @@ public class MainController implements Initializable{
         aboutTextArea.appendText("After taking the quiz, based on your answers you will be sorted into a Hogwarts house.\n");
         aboutTextArea.appendText("To begin click the 'Start Quiz' button.\n");
         aboutTextArea.appendText("To access house information click the 'House Information' button.\n");
+        houseArray.loadHouse(houseArray);
+        houseArray.read("houses.txt");
+        house[0] = house[0] +"           " + houseArray.houses[0].getPopulation();
+        house[1] = house[1] +"           " + houseArray.houses[1].getPopulation();
+        house[2] = house[2] +"             " + houseArray.houses[2].getPopulation();
+        house[3] = house[3] +"          " + houseArray.houses[3].getPopulation();
         houseName.getItems().addAll(house);
     }
 
