@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -25,6 +26,18 @@ public class SearchController implements Initializable{
     private Button closeSearchButton;
     
     @FXML
+    private Label errorLabel;
+    
+    @FXML 
+    private Label idLabel;
+    
+    public static boolean isIdError = false;
+    
+    public static boolean validInput = false;
+    
+    public static int userId = 00000;
+    
+    @FXML
     void handleCloseButtonAction(ActionEvent event) {
         try {
             Stage stage = (Stage) closeSearchButton.getScene().getWindow();
@@ -36,8 +49,15 @@ public class SearchController implements Initializable{
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        // TODO Auto-generated method stub
-        
+        if (isIdError == true) {
+            idLabel.setText("ERROR:");
+            errorLabel.setText("ID not found! Enter a valid ID."); 
+        } 
+        if (validInput == true) {
+            idLabel.setText("ID: " + userId);
+            errorLabel.setText("FOUND! House Information Updated!"); 
+        } 
+       
     }
 
 }
