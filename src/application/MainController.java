@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -40,6 +41,11 @@ public class MainController implements Initializable{
     
     @FXML
     private Label errorLabel;
+    
+    @FXML
+    private ListView<String> houseName;
+    
+    String[] house = { "Gryffindor\n" , "Hufflepuff\n", " Slytherin", "Ravenclaw" };
     
     @FXML
     void handleInfoButtonAction(ActionEvent event) {
@@ -121,6 +127,7 @@ public class MainController implements Initializable{
         aboutTextArea.appendText("After taking the quiz, based on your answers you will be sorted into a Hogwarts house.\n");
         aboutTextArea.appendText("To begin click the 'Start Quiz' button.\n");
         aboutTextArea.appendText("To access house information click the 'House Information' button.\n");
+        houseName.getItems().addAll(house);
     }
 
 }
