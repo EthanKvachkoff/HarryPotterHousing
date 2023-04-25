@@ -87,7 +87,9 @@ public class MainController implements Initializable{
                     }
                 }
                 SearchController.isIdError = true;
-                idDialogBox();
+                if (SearchController.validInput != true) {
+                    idDialogBox();
+                }
                 System.out.println("User Not Found");
             } else {
                 SearchController.isIdError = true;
