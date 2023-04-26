@@ -101,16 +101,13 @@ public class MainController implements Initializable {
                 if (DialogueController.validInput != true) {
                     idDialogBox();
                 }
-                System.out.println("User Not Found");
             } else {
                 DialogueController.isIdError = true;
                 idDialogBox();
-                System.out.println("User Not Found");
             }
         } catch (NumberFormatException e) {
             DialogueController.isIdError = true;
             idDialogBox();
-            System.out.println("The string is not a number");
         }
     }
 

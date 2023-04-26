@@ -1,4 +1,4 @@
-// Class SearchController, C211 Group Project, Spring 2023
+// Class DialogueController, C211 Group Project, Spring 2023
 // Authors: Catlin Kramka/Zach Butler/Ethan Kvachkoff
 package application;
 
