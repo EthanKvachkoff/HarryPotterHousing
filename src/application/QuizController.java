@@ -7,25 +7,19 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 
 public class QuizController implements Initializable {
-    //Button to submit quiz 
+    // Button to submit quiz
     @FXML
     private Button submitQuizButton;
-    //Name field for user name input  
+    // Name field for user name input
     @FXML
     private TextField nameTextField;
     // text filed to display questions
@@ -58,7 +52,7 @@ public class QuizController implements Initializable {
 
     @FXML
     private ChoiceBox<String> answerSelect5;
-    // Arrays to assist in the calculateHouse method, createUser method, 
+    // Arrays to assist in the calculateHouse method, createUser method,
     Questions[] questionsArray = new Questions[5];
 
     HouseArray houseArray = new HouseArray(4);
@@ -84,7 +78,7 @@ public class QuizController implements Initializable {
             "C) You pick up the box and slip it into your pocket to keep for yourself.",
             "D) You magically place the box back in the person’s pocket without them noticing." };
 
-    @FXML//Event to submit the finish quiz and write the results. 
+    @FXML // Event to submit the finish quiz and write the results.
     void handleSubmitButtonAction(ActionEvent event) {
         try {
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
@@ -126,8 +120,10 @@ public class QuizController implements Initializable {
         User user = new User(userId, userName, User.assignPet(userHouse), userHouse);
         return user;
     }
-    //method to calculate the results from the selected answers associated to specific house, what ever  answers associated to specific house 
-    //totaled the greatest, that house is assigned to the user. 
+
+    // method to calculate the results from the selected answers associated to
+    // specific house, what ever answers associated to specific house
+    // totaled the greatest, that house is assigned to the user.
     private House calculateHouse() {
         int[] housePoints = new int[4];
         House house;
@@ -225,6 +221,7 @@ public class QuizController implements Initializable {
             return null;
         }
     }
+
     // set questions to the index of the questions array.
     void initQuestions() {
         questionText1.setText(questionsArray[0].getPrompt());
@@ -233,7 +230,7 @@ public class QuizController implements Initializable {
         questionText4.setText(questionsArray[3].getPrompt());
         questionText5.setText(questionsArray[4].getPrompt());
     }
-   
+
     void initQuestionArray() {
         questionsArray[0] = new Questions(
                 "You were about to begin school at Hogwarts, what type of core would your wand be?", answers1);
@@ -245,7 +242,8 @@ public class QuizController implements Initializable {
                 "You're walking in the halls of hogwarts and someone in front of you drops an unopened box of Choclate Frogs...",
                 answers5);
     }
-    //initialize the Quiz questions multiple choice drop down selection menu. 
+
+    // initialize the Quiz questions multiple choice drop down selection menu.
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         houseArray.loadHouse(houseArray);

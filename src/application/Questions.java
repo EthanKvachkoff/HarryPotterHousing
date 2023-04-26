@@ -3,8 +3,8 @@
 package application;
 
 public class Questions {
-    // Instance variables
 
+    // Instance variables
     String prompt;
 
     String answers[];

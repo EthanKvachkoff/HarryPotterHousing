@@ -7,11 +7,11 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class House {
-    
+
     // Instance attributes
     String name, description, color;
     int population;
-    
+
     // Default constructor
     public House() {
         name = "";
@@ -19,50 +19,50 @@ public class House {
         color = "";
         population = 0;
     }
-    
+
     // Non-Default constructor
     public House(String theName, String descrip, String theColor, int pop) {
         name = theName;
         description = descrip;
         color = theColor;
-        population = pop;      
+        population = pop;
     }
-    
-    //Setters
+
+    // Setters
     public void setName(String theName) {
         this.name = theName;
     }
-    
+
     public void setDescription(String descrip) {
-       this.description = descrip;
+        this.description = descrip;
     }
-    
+
     public void setColor(String theColor) {
         this.color = theColor;
     }
-    
+
     public void setPopulation(int pop) {
         this.population = pop;
     }
-    
-    //Getters
+
+    // Getters
     public String getName() {
         return this.name;
     }
-    
+
     public String getDescription() {
         return this.description;
     }
-    
+
     public String getColor() {
         return this.color;
     }
-    
+
     public int getPopulation() {
         return this.population;
     }
-    
- // Reads house's name and population from given file
+
+    // Reads house's name and population from given file
     public void read(String filename) {
         File f = new File(filename);
         try (Scanner scan = new Scanner(f)) {
@@ -78,7 +78,7 @@ public class House {
     // Reads multiple objects from the same file
     public void read(Scanner scan) {
         if (scan.hasNext()) {
-        	name = scan.nextLine();
+            name = scan.nextLine();
             description = scan.nextLine();
             color = scan.nextLine();
             population = scan.nextInt();
@@ -104,5 +104,5 @@ public class House {
             e.printStackTrace();
         }
     }
-    
+
 }
