@@ -41,4 +41,5 @@ Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler
 #### References
  - Hogwarts logo PNG. Hogwarts Logo Png-Free Transparent PNG Logos. (n.d.). April,2023, 
  	https://www.freepnglogos.com/pics/hogwarts 
-
+ - Hogwarts houses. Harry Potter Wiki. (n.d.). April, 2023, 
+    https://harrypotter.fandom.com/wiki/Hogwarts_Houses 
