@@ -88,8 +88,7 @@ public class QuizController implements Initializable {
             userList.users.add(usableUser);
             userList.write("users.txt");
             InfoController.tempUser = usableUser;
-            System.out.println(usableUser.getName() + "\n" + usableUser.getHouse().name + "\n" + usableUser.id + "\n"
-                    + usableUser.pet); // test case
+            System.out.println(usableUser.getName() + "\n" + usableUser.getHouse().name + "\n" + usableUser.id + "\n" + usableUser.pet); // test case
             stage.close();
         } catch (Exception e) {
             e.printStackTrace();
