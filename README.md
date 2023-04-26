@@ -13,24 +13,49 @@ __InfoController class__ - Catlin Kramka, Ethan Kvachkoff, Zach Butler
 __MainController class__ - Catlin Kramka, Ethan Kvachkoff, Zach Butler  
 __QuizController class__ - Catlin Kramka, Ethan Kvachkoff, Zach Butler  
 
-### CLASSES:
+## CLASSES:
 
-## Users
+### User
 Author - Zach Butler
 
-## Question
+user(int, String, String, House) - Non-default constructor
+
+String assignPet(House) - Given a house will return the pet given for that house
+
+read(String) -  Reads user's id, name, pet, and house from given file
+
+read(Scanner) - Reads multiple objects from the same file
+
+write(String) - Write user's id, name, pet, and house to file
+
+write(FileWriter) - Write to file with FileWriter object
+
+_Getters:_  
+getId()  
+getName()   
+getPet()  
+getHouse()  
+
+_Setters:_  
+setId(int)  
+setName(String)  
+setPet(String)  
+setHouse(House)  
+
+### Question
 Author - Catlin Kramka
 
-## House
+
+### House
 Author - Ethan Kvachkoff
 
-## InfoController
+### InfoController
 Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler 
 
-## MainController
+### MainController
 Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler
 
-## QuizController
+### QuizController
 Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler
 
 #### Contibutors
@@ -41,4 +66,5 @@ Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler
 #### References
  - Hogwarts logo PNG. Hogwarts Logo Png-Free Transparent PNG Logos. (n.d.). April,2023, 
  	https://www.freepnglogos.com/pics/hogwarts 
-
+ - Hogwarts houses. Harry Potter Wiki. (n.d.). April, 2023, 
+    https://harrypotter.fandom.com/wiki/Hogwarts_Houses 
