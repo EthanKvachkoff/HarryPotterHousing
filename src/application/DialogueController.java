@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
-public class SearchController implements Initializable {
+public class DialogueController implements Initializable {
 
     @FXML
     private Button closeSearchButton;

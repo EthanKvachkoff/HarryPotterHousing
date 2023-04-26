@@ -92,10 +92,8 @@ public class QuizController implements Initializable {
                 userList.users.add(usableUser);
                 userList.write("users.txt");
                 InfoController.tempUser = usableUser;
-                System.out.println(usableUser.getName() + "\n" + usableUser.getHouse().name + "\n" + usableUser.id
-                        + "\n" + usableUser.pet); // test case
+                System.out.println(usableUser.getName() + "\n" + usableUser.getHouse().name + "\n" + usableUser.id + "\n" + usableUser.pet); // test case
                 quizValidation();
-
                 stage.close();
             }
         } catch (Exception e) {
@@ -106,7 +104,7 @@ public class QuizController implements Initializable {
     // Quiz validation dialog box
     public void quizDialogBox() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("IdSearch.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DialogueGUI.fxml"));
             Parent root2 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("ERROR:");
@@ -126,15 +124,15 @@ public class QuizController implements Initializable {
                 || answerSelect4.getValue() == "*Select an Answer*"
                 || answerSelect5.getValue() == "*Select an Answer*") {
             quizDialogBox();
-            while (SearchController.validQuiz = false) {
+            while (DialogueController.validQuiz = false) {
                 nameTextField.getText();
                 if (nameTextField.getText().trim().isEmpty() == false) {
-                    SearchController.validQuiz = true;
+                    DialogueController.validQuiz = true;
                     return true;
                 }
             }
         } else {
-            SearchController.validQuiz = true;
+            DialogueController.validQuiz = true;
             return true;
         }
         return false;
