@@ -194,7 +194,7 @@ public class QuizController implements Initializable {
             houseArray.write("houses.txt");
             House hufflepuff = new House("Hufflepuff", "Yellow & Black",
                     "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.",
-                    houseArray.houses[1].getPopulation()); // FIX POPULATIOn
+                    houseArray.houses[0].getPopulation());
             return hufflepuff;
         } else if (housePoints[1] == Questions.getLargestNumber(housePoints)) {
             tempPop = houseArray.houses[1].getPopulation();
@@ -205,7 +205,7 @@ public class QuizController implements Initializable {
                     houseArray.houses[1].getPopulation());
             return slytherin;
         } else if (housePoints[2] == Questions.getLargestNumber(housePoints)) {
-            tempPop = houseArray.houses[0].getPopulation();
+            tempPop = houseArray.houses[2].getPopulation();
             houseArray.houses[2].setPopulation(tempPop + 1);
             houseArray.write("houses.txt");
             House gryffindor = new House("Gryffindor", "Red & Gold",
