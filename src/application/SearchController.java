@@ -26,6 +26,8 @@ public class SearchController implements Initializable {
     public static boolean isIdError = false;
 
     public static boolean validInput = false;
+    
+    public static boolean validQuiz = false;
 
     public static int userId = 00000;
 
@@ -48,6 +50,10 @@ public class SearchController implements Initializable {
         if (validInput == true) {
             idLabel.setText("ID: " + userId);
             errorLabel.setText("FOUND! House Information Updated!");
+        }
+        if (validQuiz == false) {
+            idLabel.setText("ERROR:");
+            errorLabel.setText("Please make sure all fields are filled out!");
         }
 
     }
