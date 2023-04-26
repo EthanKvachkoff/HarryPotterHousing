@@ -7,7 +7,10 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -82,18 +85,59 @@ public class QuizController implements Initializable {
     void handleSubmitButtonAction(ActionEvent event) {
         try {
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
-            House userHouse = calculateHouse();
-            usableUser = createUser(userHouse);
-            userList = UserList.grabUsers();
-            userList.users.add(usableUser);
-            userList.write("users.txt");
-            InfoController.tempUser = usableUser;
-            System.out.println(usableUser.getName() + "\n" + usableUser.getHouse().name + "\n" + usableUser.id + "\n"
-                    + usableUser.pet); // test case
-            stage.close();
+            if (quizValidation() == true) {
+                House userHouse = calculateHouse();
+                usableUser = createUser(userHouse);
+                userList = UserList.grabUsers();
+                userList.users.add(usableUser);
+                userList.write("users.txt");
+                InfoController.tempUser = usableUser;
+                System.out.println(usableUser.getName() + "\n" + usableUser.getHouse().name + "\n" + usableUser.id
+                        + "\n" + usableUser.pet); // test case
+                quizValidation();
+
+                stage.close();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // Quiz validation dialog box
+    public void quizDialogBox() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("IdSearch.fxml"));
+            Parent root2 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("ERROR:");
+            stage.setScene(new Scene(root2, 280, 125));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Method that checks if name has been entered
+    // and all questions have been answered
+    private boolean quizValidation() {
+        if (nameTextField.getText().trim().isEmpty() || answerSelect1.getValue() == "*Select an Answer*"
+                || answerSelect2.getValue() == "*Select an Answer*" 
+                || answerSelect3.getValue() == "*Select an Answer*"
+                || answerSelect4.getValue() == "*Select an Answer*"
+                || answerSelect5.getValue() == "*Select an Answer*") {
+            quizDialogBox();
+            while (SearchController.validQuiz = false) {
+                nameTextField.getText();
+                if (nameTextField.getText().trim().isEmpty() == false) {
+                    SearchController.validQuiz = true;
+                    return true;
+                }
+            }
+        } else {
+            SearchController.validQuiz = true;
+            return true;
+        }
+        return false;
     }
 
     private User createUser(House userHouse) {
