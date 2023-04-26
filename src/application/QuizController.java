@@ -22,13 +22,13 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 
 public class QuizController implements Initializable {
-
+    //Button to submit quiz 
     @FXML
     private Button submitQuizButton;
-
+    //Name field for user name input  
     @FXML
     private TextField nameTextField;
-
+    // text filed to display questions
     @FXML
     private TextField questionText1;
 
@@ -43,7 +43,7 @@ public class QuizController implements Initializable {
 
     @FXML
     private TextField questionText5;
-
+    // Drop down menu to display multiple choice questions.
     @FXML
     private ChoiceBox<String> answerSelect1;
 
@@ -58,7 +58,7 @@ public class QuizController implements Initializable {
 
     @FXML
     private ChoiceBox<String> answerSelect5;
-
+    // Arrays to assist in the calculateHouse method, createUser method, 
     Questions[] questionsArray = new Questions[5];
 
     HouseArray houseArray = new HouseArray(4);
@@ -84,7 +84,7 @@ public class QuizController implements Initializable {
             "C) You pick up the box and slip it into your pocket to keep for yourself.",
             "D) You magically place the box back in the person’s pocket without them noticing." };
 
-    @FXML
+    @FXML//Event to submit the finish quiz and write the results. 
     void handleSubmitButtonAction(ActionEvent event) {
         try {
             Stage stage = (Stage) submitQuizButton.getScene().getWindow();
@@ -126,7 +126,8 @@ public class QuizController implements Initializable {
         User user = new User(userId, userName, User.assignPet(userHouse), userHouse);
         return user;
     }
-
+    //method to calculate the results from the selected answers associated to specific house, what ever  answers associated to specific house 
+    //totaled the greatest, that house is assigned to the user. 
     private House calculateHouse() {
         int[] housePoints = new int[4];
         House house;
@@ -193,7 +194,7 @@ public class QuizController implements Initializable {
             houseArray.write("houses.txt");
             House hufflepuff = new House("Hufflepuff", "Yellow & Black",
                     "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.",
-                    houseArray.houses[0].getPopulation()); // FIX POPULATIOn
+                    houseArray.houses[1].getPopulation()); // FIX POPULATIOn
             return hufflepuff;
         } else if (housePoints[1] == Questions.getLargestNumber(housePoints)) {
             tempPop = houseArray.houses[1].getPopulation();
@@ -204,7 +205,7 @@ public class QuizController implements Initializable {
                     houseArray.houses[1].getPopulation());
             return slytherin;
         } else if (housePoints[2] == Questions.getLargestNumber(housePoints)) {
-            tempPop = houseArray.houses[2].getPopulation();
+            tempPop = houseArray.houses[0].getPopulation();
             houseArray.houses[2].setPopulation(tempPop + 1);
             houseArray.write("houses.txt");
             House gryffindor = new House("Gryffindor", "Red & Gold",
@@ -224,7 +225,7 @@ public class QuizController implements Initializable {
             return null;
         }
     }
-
+    // set questions to the index of the questions array.
     void initQuestions() {
         questionText1.setText(questionsArray[0].getPrompt());
         questionText2.setText(questionsArray[1].getPrompt());
@@ -232,7 +233,7 @@ public class QuizController implements Initializable {
         questionText4.setText(questionsArray[3].getPrompt());
         questionText5.setText(questionsArray[4].getPrompt());
     }
-
+   
     void initQuestionArray() {
         questionsArray[0] = new Questions(
                 "You were about to begin school at Hogwarts, what type of core would your wand be?", answers1);
@@ -244,7 +245,7 @@ public class QuizController implements Initializable {
                 "You're walking in the halls of hogwarts and someone in front of you drops an unopened box of Choclate Frogs...",
                 answers5);
     }
-
+    //initialize the Quiz questions multiple choice drop down selection menu. 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         houseArray.loadHouse(houseArray);

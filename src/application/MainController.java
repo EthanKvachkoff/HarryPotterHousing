@@ -21,16 +21,16 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
 public class MainController implements Initializable{
-    
+    //Buttons to view house info 
     @FXML
     private Button houseInfoButton;
-    
+    //button to launch the quiz 
     @FXML
     private Button startQuizButton;
     
     @FXML
     private TextArea aboutTextArea;
-    
+    //button to to enter user ID and find house info
     @FXML
     private Button findUserById;
     
@@ -42,13 +42,13 @@ public class MainController implements Initializable{
     @FXML
     private Label errorLabel;
     
-    @FXML
+    @FXML // house titles and updated population of house students
     private ListView<String> houseName;
     
     String[] house = { "Gryffindor" , "Hufflepuff", "Slytherin", "Ravenclaw" };
     
     HouseArray houseArray = new HouseArray(4);
-    
+    // Action event to open the Info box, display info. 
     @FXML
     void handleInfoButtonAction(ActionEvent event) {
         try {
@@ -62,7 +62,7 @@ public class MainController implements Initializable{
             e.printStackTrace();
         }
     } 
-    
+    // Action event to open/launch quiz window.
     @FXML
     void handleQuizButtonAction(ActionEvent event) {
         try {
@@ -76,7 +76,7 @@ public class MainController implements Initializable{
             e.printStackTrace();
         }
     } 
-    
+    //Action event to fine user by id.
     @FXML
     void findUser(ActionEvent event) {
         try {
@@ -109,8 +109,8 @@ public class MainController implements Initializable{
             idDialogBox();
             System.out.println("The string is not a number");
         }
-    }
-    
+    } 
+    //Text area for id input. 
     public void idDialogBox() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("IdSearch.fxml"));
@@ -122,7 +122,7 @@ public class MainController implements Initializable{
         } catch(Exception e) {
             e.printStackTrace();
         } 
-    }
+    }//Initializer to display text, the updated house population, and house titles. 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         aboutTextArea.appendText("Welcome to the Harry Potter House Quiz! \n");
