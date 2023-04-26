@@ -1,4 +1,4 @@
-// Class SearchController, C211 Group Project, Spring 2023
+// Class DialogueController, C211 Group Project, Spring 2023
 // Authors: Catlin Kramka/Zach Butler/Ethan Kvachkoff
 package application;
 
@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
-public class SearchController implements Initializable {
+public class DialogueController implements Initializable {
 
     @FXML
     private Button closeSearchButton;

@@ -16,7 +16,7 @@
       <Pane prefHeight="633.0" prefWidth="925.0" style="-fx-background-color: #0E1A40;">
          <children>
             <Button fx:id="startQuizButton" layoutX="417.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleQuizButtonAction" prefHeight="53.0" prefWidth="132.0" style="-fx-border-color: #946B2D;" text="Start Quiz" />
-            <Button fx:id="houseInfoButton" layoutX="244.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleInfoButtonAction" prefHeight="53.0" prefWidth="144.0" style="-fx-border-color: #946B2D;" text="House Information" />
+            <Button fx:id="userInfoButton" layoutX="244.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleInfoButtonAction" prefHeight="53.0" prefWidth="144.0" style="-fx-border-color: #946B2D;" text="User Information" />
             <Label layoutX="25.0" layoutY="14.0" prefHeight="81.0" prefWidth="700.0" text="Harry Potter Housing Quiz" textFill="#946b2d">
                <font>
                   <Font name="Castellar" size="40.0" />

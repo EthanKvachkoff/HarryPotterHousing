@@ -21,7 +21,8 @@ import javafx.event.ActionEvent;
 public class MainController implements Initializable {
     // Buttons to view house info
     @FXML
-    private Button houseInfoButton;
+    private Button userInfoButton;
+    
     // button to launch the quiz
     @FXML
     private Button startQuizButton;
@@ -90,33 +91,30 @@ public class MainController implements Initializable {
                         User user = userList.findUser(id);
                         InfoController.tempUser = user;
                         System.out.println("User Found");
-                        SearchController.validInput = true;
-                        SearchController.userId = id;
+                        DialogueController.validInput = true;
+                        DialogueController.userId = id;
                         idDialogBox();
                         break;
                     }
                 }
-                SearchController.isIdError = true;
-                if (SearchController.validInput != true) {
+                DialogueController.isIdError = true;
+                if (DialogueController.validInput != true) {
                     idDialogBox();
                 }
-                System.out.println("User Not Found");
             } else {
-                SearchController.isIdError = true;
+                DialogueController.isIdError = true;
                 idDialogBox();
-                System.out.println("User Not Found");
             }
         } catch (NumberFormatException e) {
-            SearchController.isIdError = true;
+            DialogueController.isIdError = true;
             idDialogBox();
-            System.out.println("The string is not a number");
         }
     }
 
     // Text area for id input.
     public void idDialogBox() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("IdSearch.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DialogueGUI.fxml"));
             Parent root2 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("ID:");
