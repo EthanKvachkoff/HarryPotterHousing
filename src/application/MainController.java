@@ -15,40 +15,39 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
-public class MainController implements Initializable{
-    //Buttons to view house info 
+public class MainController implements Initializable {
+    // Buttons to view house info
     @FXML
     private Button houseInfoButton;
-    //button to launch the quiz 
+    // button to launch the quiz
     @FXML
     private Button startQuizButton;
-    
+
     @FXML
     private TextArea aboutTextArea;
-    //button to to enter user ID and find house info
+    // button to to enter user ID and find house info
     @FXML
     private Button findUserById;
-    
+
     @FXML
     private TextField searchId;
-    
+
     UserList userList = new UserList();
-    
+
     @FXML
     private Label errorLabel;
-    
+
     @FXML // house titles and updated population of house students
     private ListView<String> houseName;
-    
-    String[] house = { "Gryffindor" , "Hufflepuff", "Slytherin", "Ravenclaw" };
-    
+
+    String[] house = { "Gryffindor", "Hufflepuff", "Slytherin", "Ravenclaw" };
+
     HouseArray houseArray = new HouseArray(4);
-    // Action event to open the Info box, display info. 
+
+    // Action event to open the Info box, display info.
     @FXML
     void handleInfoButtonAction(ActionEvent event) {
         try {
@@ -58,10 +57,11 @@ public class MainController implements Initializable{
             stage.setTitle("House Information");
             stage.setScene(new Scene(root1));
             stage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    } 
+    }
+
     // Action event to open/launch quiz window.
     @FXML
     void handleQuizButtonAction(ActionEvent event) {
@@ -72,11 +72,12 @@ public class MainController implements Initializable{
             stage.setTitle("House Quiz");
             stage.setScene(new Scene(root2, 750, 900));
             stage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    } 
-    //Action event to fine user by id.
+    }
+
+    // Action event to fine user by id.
     @FXML
     void findUser(ActionEvent event) {
         try {
@@ -103,14 +104,15 @@ public class MainController implements Initializable{
                 SearchController.isIdError = true;
                 idDialogBox();
                 System.out.println("User Not Found");
-            }  
+            }
         } catch (NumberFormatException e) {
             SearchController.isIdError = true;
             idDialogBox();
             System.out.println("The string is not a number");
         }
-    } 
-    //Text area for id input. 
+    }
+
+    // Text area for id input.
     public void idDialogBox() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("IdSearch.fxml"));
@@ -119,22 +121,25 @@ public class MainController implements Initializable{
             stage.setTitle("ID:");
             stage.setScene(new Scene(root2, 280, 125));
             stage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } 
-    }//Initializer to display text, the updated house population, and house titles. 
+        }
+    }
+
+    // Initializer to display text, the updated house population, and house titles.
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         aboutTextArea.appendText("Welcome to the Harry Potter House Quiz! \n");
-        aboutTextArea.appendText("After taking the quiz, based on your answers you will be sorted into a Hogwarts house.\n");
+        aboutTextArea
+                .appendText("After taking the quiz, based on your answers you will be sorted into a Hogwarts house.\n");
         aboutTextArea.appendText("To begin click the 'Start Quiz' button.\n");
         aboutTextArea.appendText("To access house information click the 'House Information' button.\n");
         houseArray.loadHouse(houseArray);
         houseArray.read("houses.txt");
-        house[0] = house[0] +"           " + houseArray.houses[0].getPopulation();
-        house[1] = house[1] +"           " + houseArray.houses[1].getPopulation();
-        house[2] = house[2] +"             " + houseArray.houses[2].getPopulation();
-        house[3] = house[3] +"          " + houseArray.houses[3].getPopulation();
+        house[0] = house[0] + "           " + houseArray.houses[0].getPopulation();
+        house[1] = house[1] + "           " + houseArray.houses[1].getPopulation();
+        house[2] = house[2] + "             " + houseArray.houses[2].getPopulation();
+        house[3] = house[3] + "          " + houseArray.houses[3].getPopulation();
         houseName.getItems().addAll(house);
     }
 
