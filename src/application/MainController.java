@@ -22,11 +22,11 @@ public class MainController implements Initializable {
     // Buttons to view house info
     @FXML
     private Button userInfoButton;
-    
+
     // button to launch the quiz
     @FXML
     private Button startQuizButton;
-    
+
     @FXML
     private Button refreshButton;
 
@@ -79,7 +79,7 @@ public class MainController implements Initializable {
         }
     }
 
-    // Action event to fine user by id.
+    // Action event to find user by id.
     @FXML
     void findUser(ActionEvent event) {
         try {
@@ -97,8 +97,10 @@ public class MainController implements Initializable {
                         break;
                     }
                 }
-                DialogueController.isIdError = true;
-                if (DialogueController.validInput != true) {
+                
+                    DialogueController.isIdError = true;
+                
+                if (DialogueController.validInput = false) {
                     idDialogBox();
                 }
             } else {
@@ -124,7 +126,7 @@ public class MainController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     // Refreshes the listview to show updated populations
     @FXML
     void refreshPopulation(ActionEvent event) {
@@ -134,7 +136,7 @@ public class MainController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     // Populates the listview to show house name + population
     void populateListView() {
         String[] house = { "Gryffindor", "Hufflepuff", "Slytherin", "Ravenclaw" };
