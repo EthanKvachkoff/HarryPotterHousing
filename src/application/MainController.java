@@ -49,6 +49,8 @@ public class MainController implements Initializable {
 
     HouseArray houseArray = new HouseArray(4);
     
+    public static boolean isWrongId = false;
+    
     // Action event to open the Info box, display info.
     @FXML
     void handleInfoButtonAction(ActionEvent event) {
@@ -94,8 +96,15 @@ public class MainController implements Initializable {
                         DialogueController.validInput = true;
                         DialogueController.userId = id;
                         idDialogBox();
+                        isWrongId = false;
                         break;
+                    } else {
+                        isWrongId = true;
                     }
+                }
+                if (isWrongId == true) {
+                    DialogueController.isIdError = true;
+                    idDialogBox();
                 }
                 if (DialogueController.validInput = false) {
                     DialogueController.isIdError = true;
