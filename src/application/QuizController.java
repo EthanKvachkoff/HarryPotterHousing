@@ -25,7 +25,7 @@ public class QuizController implements Initializable {
     // Name field for user name input
     @FXML
     private TextField nameTextField;
-    // text filed to display questions
+    // Text field to display questions
     @FXML
     private TextField questionText1;
 
@@ -163,7 +163,7 @@ public class QuizController implements Initializable {
         return user;
     }
 
-    // method to calculate the results from the selected answers associated to
+    // Method to calculate the results from the selected answers associated to
     // specific house, what ever answers associated to specific house
     // totaled the greatest, that house is assigned to the user.
     private House calculateHouse() {
@@ -247,7 +247,7 @@ public class QuizController implements Initializable {
             houseArray.houses[2].setPopulation(tempPop + 1);
             houseArray.write("houses.txt");
             House gryffindor = new House("Gryffindor", "Red & Gold",
-                    "Gryffindor is know to have te traits of courage as well as daring, nerve, and chivarly. Very Brave.",
+                    "Gryffindor is know to have the traits of courage as well as daring, nerve, and chivalry. Very Brave.",
                     houseArray.houses[2].getPopulation());
             return gryffindor;
         } else if (housePoints[3] == Questions.getLargestNumber(housePoints)) {
@@ -264,7 +264,7 @@ public class QuizController implements Initializable {
         }
     }
 
-    // set questions to the index of the questions array.
+    // Set questions to the index of the questions array.
     void initQuestions() {
         questionText1.setText(questionsArray[0].getPrompt());
         questionText2.setText(questionsArray[1].getPrompt());
@@ -285,7 +285,7 @@ public class QuizController implements Initializable {
                 answers5);
     }
 
-    // initialize the Quiz questions multiple choice drop down selection menu.
+    // Initialize the Quiz questions multiple choice drop down selection menu.
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         houseArray.loadHouse(houseArray);
