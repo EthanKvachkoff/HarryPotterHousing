@@ -27,7 +27,7 @@ public class DialogueController implements Initializable {
 
     public static boolean validInput = false;
     
-    public static boolean validQuiz = false;
+    public static boolean validQuiz = true;
 
     public static int userId = 00000;
 
@@ -46,14 +46,17 @@ public class DialogueController implements Initializable {
         if (isIdError == true) {
             idLabel.setText("ERROR:");
             errorLabel.setText("ID not found! Enter a valid ID.");
+            isIdError = false;
         }
         if (validInput == true) {
             idLabel.setText("ID: " + userId);
             errorLabel.setText("FOUND! House Information Updated!");
+            validInput = false;
         }
         if (validQuiz == false) {
             idLabel.setText("ERROR:");
             errorLabel.setText("Please make sure all fields are filled out!");
+            validQuiz = true;
         }
 
     }
