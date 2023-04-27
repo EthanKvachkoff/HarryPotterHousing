@@ -97,10 +97,8 @@ public class MainController implements Initializable {
                         break;
                     }
                 }
-                
-                    DialogueController.isIdError = true;
-                
                 if (DialogueController.validInput = false) {
+                    DialogueController.isIdError = true;
                     idDialogBox();
                 }
             } else {
