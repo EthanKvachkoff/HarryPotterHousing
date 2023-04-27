@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DialogueController">
+   <children>
+      <VBox prefHeight="124.0" prefWidth="260.0">
+         <children>
+            <Pane prefHeight="124.0" prefWidth="280.0">
+               <children>
+                  <Button fx:id="closeSearchButton" layoutX="108.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Close" />
+                  <Label fx:id="idLabel" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="74.0" text="Id: " />
+                  <Label fx:id="errorLabel" layoutX="12.0" layoutY="39.0" prefHeight="32.0" prefWidth="237.0" text="PlaceHolder" wrapText="true" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
