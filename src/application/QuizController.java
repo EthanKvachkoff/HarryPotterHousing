@@ -124,7 +124,6 @@ public class QuizController implements Initializable {
                 || answerSelect3.getValue() == "*Select an Answer*"
                 || answerSelect4.getValue() == "*Select an Answer*"
                 || answerSelect5.getValue() == "*Select an Answer*") {
-            quizDialogBox();
             while (DialogueController.validQuiz = false) {
                 nameTextField.getText();
                 if (nameTextField.getText().trim().isEmpty() == false) {
@@ -132,6 +131,7 @@ public class QuizController implements Initializable {
                     return true;
                 }
             }
+            quizDialogBox();
         } else {
             DialogueController.validQuiz = true;
             return true;
