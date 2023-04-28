@@ -48,9 +48,9 @@ public class MainController implements Initializable {
     private ListView<String> houseName;
 
     HouseArray houseArray = new HouseArray(4);
-    
+
     public static boolean isWrongId = false;
-    
+
     // Action event to open the Info box, display info.
     @FXML
     void handleInfoButtonAction(ActionEvent event) {
@@ -161,9 +161,10 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         aboutTextArea.appendText("Welcome to the Harry Potter House Quiz! \n");
-        aboutTextArea.appendText("After taking the quiz, based on your answers you will be sorted into a Hogwarts house.\n");
+        aboutTextArea
+                .appendText("After taking the quiz, based on your answers you will be sorted into a Hogwarts house.\n");
         aboutTextArea.appendText("To begin click the 'Start Quiz' button.\n");
-        aboutTextArea.appendText("To access house information click the 'House Information' button.\n");        
+        aboutTextArea.appendText("To access house information click the 'House Information' button.\n");
         populateListView();
     }
 

@@ -23,14 +23,17 @@ public class DialogueController implements Initializable {
     @FXML
     private Label idLabel;
 
+    // Boolean variables that change value
+    // based on which situation has occurred
     public static boolean isIdError = false;
 
     public static boolean validInput = false;
-    
+
     public static boolean validQuiz = true;
 
     public static int userId = 00000;
 
+    // Closes the dialog box
     @FXML
     void handleCloseButtonAction(ActionEvent event) {
         try {
@@ -41,6 +44,7 @@ public class DialogueController implements Initializable {
         }
     }
 
+    // Message of the dialog box is changed based on the situation
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         if (isIdError == true) {

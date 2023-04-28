@@ -23,6 +23,7 @@ public class InfoController implements Initializable {
         showUserInfo();
     }
 
+    // Method shows the info of user
     public void showUserInfo() {
         if (tempUser != null) {
             infoText.appendText("Id: " + tempUser.getId() + "\n");
