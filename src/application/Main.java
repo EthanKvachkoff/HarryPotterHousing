@@ -3,6 +3,9 @@
 
 package application;
 
+import java.io.File;
+import java.io.FileWriter;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -19,6 +22,13 @@ public class Main extends Application {
             primaryStage.setTitle("Harry Potter Housing Quiz");
             primaryStage.setScene(scene);
             primaryStage.show();
+            File file = new File("houses.txt");
+            if (file.exists() && file.isFile()) {
+                if (file.length() == 0) {
+                    House.createHouses("houses.txt");
+                }
+            }
+            
         } catch (Exception e) {
             e.printStackTrace();
         }

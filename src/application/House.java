@@ -104,5 +104,18 @@ public class House {
             e.printStackTrace();
         }
     }
+    
+    // Creates houses.txt and populates it with default information
+    public static void createHouses(String filename) {
+        try (FileWriter f = new FileWriter(filename)) {
+            f.write("Hufflepuff\n" + "Hufflepuff is known for having members that are patient, fair, hard-working, and sometimes blandly nice.\n" + "yellow\n" + 0 + "\n");
+            f.write("Slytherin\n" + "Slytherins tend to be ambitious, shrewd, cunning, strong leaders, and achievement-oriented.\n" + "green\n" + 0 + "\n");
+            f.write("Gryffindor\n" + "Gryffindor is know to have the traits of courage as well as daring, nerve, and chivalry. Very Brave.\n" + "red\n" + 0 + "\n");
+            f.write("Ravenclaw\n" + "Ravenclaws possess the traits of cleverness, wisdom, wit, intellectual ability and creativity.\n" + "blue\n" + 0 + "\n");        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
