@@ -92,7 +92,8 @@ public class QuizController implements Initializable {
                 userList.users.add(usableUser);
                 userList.write("users.txt");
                 InfoController.tempUser = usableUser;
-                System.out.println(usableUser.getName() + "\n" + usableUser.getHouse().name + "\n" + usableUser.id + "\n" + usableUser.pet); // test case
+                System.out.println(usableUser.getName() + "\n" + usableUser.getHouse().name + "\n" + usableUser.id
+                        + "\n" + usableUser.pet); // test case
                 quizValidation();
                 stage.close();
             }
@@ -138,6 +139,7 @@ public class QuizController implements Initializable {
         return false;
     }
 
+    // Method that creates a user with a unique ID
     private User createUser(House userHouse) {
         userList = UserList.grabUsers();
         boolean uniqueId = false;
@@ -273,6 +275,7 @@ public class QuizController implements Initializable {
         questionText5.setText(questionsArray[4].getPrompt());
     }
 
+    // Method initializes the questions array with each question
     void initQuestionArray() {
         questionsArray[0] = new Questions(
                 "You were about to begin school at Hogwarts, what type of core would your wand be?", answers1);
