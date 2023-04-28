@@ -146,7 +146,7 @@ public class MainController implements Initializable {
 
     // Populates the listview to show house name + population
     void populateListView() {
-        String[] house = { "Gryffindor", "Hufflepuff", "Slytherin", "Ravenclaw" };
+        String[] house = {"Hufflepuff", "Slytherin", "Gryffindor", "Ravenclaw" };
         houseName.getItems().clear();
         houseArray.loadHouse(houseArray);
         houseArray.read("houses.txt");
