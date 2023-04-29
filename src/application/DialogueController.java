@@ -54,7 +54,7 @@ public class DialogueController implements Initializable {
         }
         if (validInput == true) {
             idLabel.setText("ID: " + userId);
-            errorLabel.setText("FOUND! House Information Updated!");
+            errorLabel.setText("FOUND! User Information Updated!");
             validInput = false;
         }
         if (validQuiz == false) {
