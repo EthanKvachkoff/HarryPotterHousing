@@ -90,7 +90,6 @@ public class House {
 
         try (FileWriter f = new FileWriter(filename)) {
             f.write(name + "\n" + description + "\n" + color + "\n" + population + "\n");
-
         } catch (Exception e) {
             e.printStackTrace();
         }
