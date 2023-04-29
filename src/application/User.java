@@ -80,8 +80,8 @@ public class User {
         try (Scanner scan = new Scanner(f)) {
             id = scan.nextInt();
             name = scan.nextLine();
-            pet = scan.nextLine();
             house.name = scan.nextLine();
+            pet = scan.nextLine();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -92,8 +92,8 @@ public class User {
         if (scan.hasNext()) {
             id = scan.nextInt();
             name = scan.nextLine();
-            pet = scan.nextLine();
             house.name = scan.nextLine();
+            pet = scan.nextLine();
         }
     }
 
@@ -101,7 +101,7 @@ public class User {
     public void write(String filename) {
 
         try (FileWriter f = new FileWriter(filename)) {
-            f.write(id + "\n" + name + "\n" + pet + "\n" + house.name + "\n");
+            f.write(id + "\n" + name + "\n" + house.name + "\n" + pet + "\n");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -111,7 +111,7 @@ public class User {
     // Write to file with FileWriter object
     public void write(FileWriter f) {
         try {
-            f.write(id + "\n" + name + "\n" + pet + "\n" + house.name + "\n");
+            f.write(id + "\n" + name + "\n" + house.name + "\n" + pet + "\n");
         } catch (Exception e) {
             e.printStackTrace();
         }
