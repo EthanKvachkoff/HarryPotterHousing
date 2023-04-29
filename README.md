@@ -2,7 +2,7 @@
 # HarryPotterHousing
 Group project for C211 Programming 2 at Indiana University Northwest
 
-### Contibutors
+### Contributors
 - Ethan Kvachkoff
 - Zach Butler
 - Catlin Kramka
@@ -72,7 +72,7 @@ HOW TO USE:
  
  Refresh Button - Used to refresh the populations of the houses once the quiz has been taken.
  
- After completing the quiz you get a specific ID which can be used to load information on reboot of the GUI. This can be done by typing in your ID and presing the find button. 
+ After completing the quiz you get a specific ID which can be used to load information on reboot of the GUI. This can be done by typing in your ID and pressing the find button. 
  
  House Information Button - Used to view users pet/house/name/id after quiz has been taken or entered in their valid ID
  
@@ -85,7 +85,7 @@ HOW TO USE:
   - Once every field has been filled out you can submit the quiz. View house/user information via the House Information Button. 
   
   Dialogue GUI: 
-  -User enters their assigned ID into text field to search for there info. 
+  -Users enter their assigned ID into text field to search for their info. 
   
   Info Box GUI:
   -After Id is entered into the ID text field, user can click User Information button and the ID assigned info of the house will 
