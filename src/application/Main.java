@@ -16,14 +16,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            VBox root = (VBox) FXMLLoader.load(getClass().getResource("MainGUI.fxml"));
-            Scene scene = new Scene(root, 750, 500);
-            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-            primaryStage.setTitle("Harry Potter Housing Quiz");
-            primaryStage.setScene(scene);
-            primaryStage.show();
             File file = new File("houses.txt");
-            if (file.exists() && file.isFile()) {
+            if (!file.exists()) {
+                file.createNewFile();
                 if (file.length() == 0) {
                     House.createHouses("houses.txt");
                 }
@@ -31,7 +26,13 @@ public class Main extends Application {
             File userFile = new File("users.txt");
             if (!userFile.exists()) {
                 userFile.createNewFile();
-            }      
+            }   
+            VBox root = (VBox) FXMLLoader.load(getClass().getResource("MainGUI.fxml"));
+            Scene scene = new Scene(root, 750, 500);
+            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            primaryStage.setTitle("Harry Potter Housing Quiz");
+            primaryStage.setScene(scene);
+            primaryStage.show();   
         } catch (Exception e) {
             e.printStackTrace();
         }
