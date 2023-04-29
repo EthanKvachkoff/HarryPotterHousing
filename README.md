@@ -2,7 +2,7 @@
 # HarryPotterHousing
 Group project for C211 Programming 2 at Indiana University Northwest
 
-## Contibutors
+## Contributors
 - Ethan Kvachkoff
 - Zach Butler
 - Catlin Kramka
@@ -45,7 +45,7 @@ The user will also be able to look up their ID number to find their house and in
 
 **DialogueController.java**  
 ->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka  
--->Purpose - To display an ID field and find users Id to inform the user of their house and associated house information.  
+-->Purpose - To display an ID field and find user's ID to inform the user of their house and associated house information.  
 
 **User.java**  
 ->Authors: Zach Butler  
@@ -81,9 +81,9 @@ The user will also be able to look up their ID number to find their house and in
  
  Refresh Button - Used to refresh the populations of the houses once the quiz has been taken.
  
- After completing the quiz you get a specific ID which can be used to load information on reboot of the GUI. This can be done by typing in your ID and presing the find button. 
+ After completing the quiz you get a specific ID which can be used to load information on reboot of the GUI. This can be done by typing in your ID and pressing the find button. 
  
- House Information Button - Used to view users pet/house/name/id after quiz has been taken or entered in their valid ID
+ House Information Button - Used to view user's pet/house/name/id after quiz has been taken or entered in their valid ID
  
  Start Quiz Button - Used to start the Quiz
  
@@ -94,10 +94,10 @@ The user will also be able to look up their ID number to find their house and in
   - Once every field has been filled out you can submit the quiz. View house/user information via the House Information Button. 
   
 ### Dialogue GUI: 
-  - User enters their assigned ID into text field to search for there info. 
+  - User enters their assigned ID into text field to search for their info. 
   
 ### Info Box GUI:
-  - After Id is entered into the ID text field, user can click User Information button and the ID assigned info of the house will 
+  - After ID is entered into the ID text field, user can click User Information button and the ID assigned info of the house will 
   be displayed. 
   
    
