@@ -2,7 +2,7 @@
 # HarryPotterHousing
 Group project for C211 Programming 2 at Indiana University Northwest
 
--#### Contibutors
+### Contibutors
 - Ethan Kvachkoff
 - Zach Butler
 - Catlin Kramka
@@ -60,7 +60,7 @@ Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler
 
 HOW TO USE:
  - Start by loading the project in any IDE, Eclipse is recommended. 
- - If you download the .jar you can open the jar to launch it as well. 
+ - If you download the .jar you can open the jar to launch it as well. (jdk-19)
  - Make sure to have JAVAFX packages installed on your IDE.
  - RUN the program
  
