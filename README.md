@@ -70,7 +70,7 @@ HOW TO USE:
  
  Houses and populations of each house shown to the left.
  
- Refresh Button - Used to refresh the populations of the houses once the quiz has beeen taken.
+ Refresh Button - Used to refresh the populations of the houses once the quiz has been taken.
  
  After completing the quiz you get a specific ID which can be used to load information on reboot of the GUI. This can be done by typing in your ID and presing the find button. 
  
