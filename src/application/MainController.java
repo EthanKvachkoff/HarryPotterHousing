@@ -2,6 +2,7 @@
 // Authors: Catlin Kramka/Zach Butler/Ethan Kvachkoff
 package application;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -85,7 +86,8 @@ public class MainController implements Initializable {
     @FXML
     void findUser(ActionEvent event) {
         try {
-            if (searchId.getText() != null) {
+            File userFile = new File("users.txt");
+            if ((searchId.getText() != null) && (userFile.length() > 0)) {
                 int id = Integer.parseInt(searchId.getText());
                 userList = UserList.grabUsers();
                 for (int i = 0; i < userList.users.size(); i++) {
