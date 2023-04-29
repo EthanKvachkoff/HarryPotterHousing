@@ -2,69 +2,78 @@
 # HarryPotterHousing
 Group project for C211 Programming 2 at Indiana University Northwest
 
-### Contibutors
+## Contibutors
 - Ethan Kvachkoff
 - Zach Butler
 - Catlin Kramka
 
--Aim and Purpose
+### Aim and Purpose
 
 The Harry Potter House Quiz purpose and aim is to allow the user to answer multiple choice questions, 
 their selection will generate the Hogwarts House that the user will be placed in based on their selection. 
 The user will also be able to look up their ID number to find their house and information associated with that house. 
 
--Src files
+### Src files
 
-House.java- author -Ethan Kvachoff
-Purpose-Class to create house elements
+**House.java**  
+->Authors: Ethan Kvachoff  
+-->Purpose - Class to create house elements  
 
-HouseArray.java- 
-Purpose-to use for the setting of the house tile
+**HouseArray.java**   
+->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka  
+-->Purpose - To use for the setting of the house tile  
 
-InfoController.java
-Purpose-To show user info
+**InfoController.java**  
+->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka  
+-->Purpose - To show user info  
 
-Main.java
-Purpose-To launch application and display the main GUI
+**Main.java**   
+->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka  
+-->Purpose - To launch application and display the main GUI  
 
-MainController.java
-Purpose-To initiate the actions the user chooses from the main GUI
+**MainController.java**    
+->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka   
+-->Purpose - To initiate the actions the user chooses from the main GUI  
 
-Questions.java-Catlin Kramka
-Purpose-Class to create questions and find the greatest points earned towards a specific house. 
+**Questions.java**  
+->Authors: Catlin Kramka  
+-->Purpose - Class to create questions and find the greatest points earned towards a specific house.  
 
-QuizController.java
-Purpose-To initiate the selection of the multiple choice questions, from those selections, calculate what house the user will be placed in. 
+**QuizController.java**  
+->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka  
+-->Purpose - To initiate the selection of the multiple choice questions, from those selections, calculate what house the user will be placed in.  
 
-DialogueController.java
-Purpose- To display an ID field and find users Id to inform the user of their house and associated house information. 
+**DialogueController.java**  
+->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka  
+-->Purpose - To display an ID field and find users Id to inform the user of their house and associated house information.  
 
-User.java - Zach Butler
-Purpose- To create a user 
+**User.java**  
+->Authors: Zach Butler  
+-->Purpose - To create a user  
 
-UserList.java
-Purpose-To read and write the users id, house, name and pet 
+**UserList.java**  
+->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka   
+-->Purpose - To read and write the users id, house, name and pet  
 
+**InfoController**  
+->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka  
+-->Purpose - Used to communicate with the information GUI  
 
-### InfoController
-Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler 
+**MainController**  
+->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka  
+-->Purpose - Used to communicate with the main GUI
 
-### MainController
-Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler
+**QuizController**  
+->Authors: Ethan Kvachkoff/Zach Butler/Catlin Kramka  
+-->Purpose - Used to communicate with the quiz GUI  
 
-### QuizController
-Authors - Catlin Kramka, Ethan Kvachkoff, Zach Butler
-
-
--Interface Function 
-
-HOW TO USE:
+## HOW TO USE:
  - Start by loading the project in any IDE, Eclipse is recommended. 
  - If you download the .jar you can open the jar to launch it as well. (jdk-19)
  - Make sure to have JAVAFX packages installed on your IDE.
  - RUN the program
  
- Main GUI:
+### Main GUI:
      
  To the right is an about text box that tells the user what quiz they are about to take.
  
@@ -79,16 +88,16 @@ HOW TO USE:
  Start Quiz Button - Used to start the Quiz
  
  
- Quiz GUI:
+ ### Quiz GUI:
   - Start by entering in your name you want to go by. 
   - Answer the question by pressing the pull down menu labeled *Select an Answer*
   - Once every field has been filled out you can submit the quiz. View house/user information via the House Information Button. 
   
-  Dialogue GUI: 
-  -User enters their assigned ID into text field to search for there info. 
+### Dialogue GUI: 
+  - User enters their assigned ID into text field to search for there info. 
   
-  Info Box GUI:
-  -After Id is entered into the ID text field, user can click User Information button and the ID assigned info of the house will 
+### Info Box GUI:
+  - After Id is entered into the ID text field, user can click User Information button and the ID assigned info of the house will 
   be displayed. 
   
    
