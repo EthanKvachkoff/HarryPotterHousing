@@ -28,7 +28,10 @@ public class Main extends Application {
                     House.createHouses("houses.txt");
                 }
             }
-            
+            File userFile = new File("users.txt");
+            if (!userFile.exists()) {
+                userFile.createNewFile();
+            }      
         } catch (Exception e) {
             e.printStackTrace();
         }
